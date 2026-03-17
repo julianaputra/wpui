@@ -1,0 +1,61 @@
+<div data-wpui="tabs" class="wpui-tabs">
+
+    <div class="wpui-tabs__list" role="tablist" aria-label="Tab navigation">
+
+        <button class="wpui-tabs__tab wpui-tabs__tab--active"
+            role="tab"
+            aria-selected="true"
+            aria-controls="tab-panel-1"
+            id="tab-1"
+            tabindex="0">
+            Overview
+        </button>
+
+        <button class="wpui-tabs__tab"
+            role="tab"
+            aria-selected="false"
+            aria-controls="tab-panel-2"
+            id="tab-2"
+            tabindex="-1">
+            Features
+        </button>
+
+        <button class="wpui-tabs__tab"
+            role="tab"
+            aria-selected="false"
+            aria-controls="tab-panel-3"
+            id="tab-3"
+            tabindex="-1">
+            Pricing
+        </button>
+
+    </div>
+
+    <div class="wpui-tabs__panels">
+
+        <div class="wpui-tabs__panel wpui-tabs__panel--active"
+            role="tabpanel"
+            id="tab-panel-1"
+            aria-labelledby="tab-1">
+            <p>Content for Overview tab.</p>
+        </div>
+
+        <div class="wpui-tabs__panel"
+            role="tabpanel"
+            id="tab-panel-2"
+            aria-labelledby="tab-2"
+            hidden>
+            <p>Content for Features tab.</p>
+        </div>
+
+        <div class="wpui-tabs__panel"
+            role="tabpanel"
+            id="tab-panel-3"
+            aria-labelledby="tab-3"
+            hidden>
+            <p>Content for Pricing tab.</p>
+        </div>
+
+    </div>
+
+</div>

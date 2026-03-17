@@ -1,0 +1,79 @@
+/* ─── Tab list ─── */
+
+.wpui-tabs__list {
+    display: flex;
+    border-bottom: 1px solid #D9D6CE;
+    gap: 2px;
+}
+
+/* ─── Tab button ─── */
+
+.wpui-tabs__tab {
+    position: relative;
+    padding: 10px 16px;
+    border: none;
+    background: none;
+    font-size: 14px;
+    font-weight: 500;
+    color: #71717A;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: color .15s;
+}
+
+.wpui-tabs__tab::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: #18181B;
+    opacity: 0;
+    transition: opacity .15s;
+}
+
+.wpui-tabs__tab:hover {
+    color: #18181B;
+}
+
+.wpui-tabs__tab--active {
+    color: #18181B;
+}
+
+.wpui-tabs__tab--active::after {
+    opacity: 1;
+}
+
+.wpui-tabs__tab:focus-visible {
+    outline: 2px solid #1A56DB;
+    outline-offset: -2px;
+    border-radius: 4px;
+}
+
+/* ─── Panels ─── */
+
+.wpui-tabs__panels {
+    padding-top: 20px;
+}
+
+.wpui-tabs__panel {
+    font-size: 14px;
+    color: #52525B;
+    line-height: 1.7;
+}
+
+.wpui-tabs__panel--active {
+    animation: wpui-tabs-in .2s ease;
+}
+
+@keyframes wpui-tabs-in {
+    from {
+        opacity: 0;
+        transform: translateY(6px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

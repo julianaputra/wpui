@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabs — WPUI Demo</title>
+
+    <link rel="stylesheet" href="demo.css">
+    <link rel="stylesheet" href="../components/tabs/tabs.css">
+
+    <style>
+        .demo-tabs-wrap {
+            max-width: 560px;
+            width: 100%;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <header class="demo-header">
+        <a href="index.html" class="demo-logo">WPUI</a>
+    </header>
+
+    <div class="demo-body">
+
+        <a href="index.html" class="demo-back">← Components</a>
+
+        <h1>Tabs</h1>
+        <p style="margin-bottom: 40px;">switch tab · arrow keys · aria-selected · aria-controls · accessible</p>
+
+        <!-- 01 Basic -->
+        <div class="demo-section">
+            <h2>Basic</h2>
+            <div class="demo-row">
+                <div class="demo-tabs-wrap">
+
+                    <div data-wpui="tabs" class="wpui-tabs">
+
+                        <div class="wpui-tabs__list" role="tablist" aria-label="Basic tabs">
+                            <button class="wpui-tabs__tab wpui-tabs__tab--active"
+                                role="tab" aria-selected="true"
+                                aria-controls="basic-panel-1" id="basic-tab-1" tabindex="0">
+                                Overview
+                            </button>
+                            <button class="wpui-tabs__tab"
+                                role="tab" aria-selected="false"
+                                aria-controls="basic-panel-2" id="basic-tab-2" tabindex="-1">
+                                Features
+                            </button>
+                            <button class="wpui-tabs__tab"
+                                role="tab" aria-selected="false"
+                                aria-controls="basic-panel-3" id="basic-tab-3" tabindex="-1">
+                                Pricing
+                            </button>
+                        </div>
+
+                        <div class="wpui-tabs__panels">
+
+                            <div class="wpui-tabs__panel wpui-tabs__panel--active"
+                                role="tabpanel" id="basic-panel-1" aria-labelledby="basic-tab-1">
+                                <p>WPUI adalah kumpulan UI component untuk WordPress theme. Copy-paste, tanpa framework, tanpa jQuery. Developer cukup ambil kode yang mereka butuhkan.</p>
+                            </div>
+
+                            <div class="wpui-tabs__panel"
+                                role="tabpanel" id="basic-panel-2" aria-labelledby="basic-tab-2" hidden>
+                                <p>Ringan, accessible, dan konsisten. Setiap component menggunakan pola HTML dan JS yang sama sehingga mudah dipelajari dan diprediksi.</p>
+                            </div>
+
+                            <div class="wpui-tabs__panel"
+                                role="tabpanel" id="basic-panel-3" aria-labelledby="basic-tab-3" hidden>
+                                <p>Gratis selamanya. Open source. Tidak ada lisensi, tidak ada subscription, tidak ada catch.</p>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- 02 Product Detail -->
+        <div class="demo-section">
+            <h2>Product Detail</h2>
+            <div class="demo-row">
+                <div class="demo-tabs-wrap">
+
+                    <div data-wpui="tabs" class="wpui-tabs">
+
+                        <div class="wpui-tabs__list" role="tablist" aria-label="Product detail tabs">
+                            <button class="wpui-tabs__tab wpui-tabs__tab--active"
+                                role="tab" aria-selected="true"
+                                aria-controls="prod-panel-1" id="prod-tab-1" tabindex="0">
+                                Description
+                            </button>
+                            <button class="wpui-tabs__tab"
+                                role="tab" aria-selected="false"
+                                aria-controls="prod-panel-2" id="prod-tab-2" tabindex="-1">
+                                Specifications
+                            </button>
+                            <button class="wpui-tabs__tab"
+                                role="tab" aria-selected="false"
+                                aria-controls="prod-panel-3" id="prod-tab-3" tabindex="-1">
+                                Reviews
+                            </button>
+                            <button class="wpui-tabs__tab"
+                                role="tab" aria-selected="false"
+                                aria-controls="prod-panel-4" id="prod-tab-4" tabindex="-1">
+                                Shipping
+                            </button>
+                        </div>
+
+                        <div class="wpui-tabs__panels">
+
+                            <div class="wpui-tabs__panel wpui-tabs__panel--active"
+                                role="tabpanel" id="prod-panel-1" aria-labelledby="prod-tab-1">
+                                <p>Kemeja Oxford premium dengan bahan katun pilihan. Nyaman dipakai sepanjang hari, cocok untuk suasana formal maupun kasual.</p>
+                            </div>
+
+                            <div class="wpui-tabs__panel"
+                                role="tabpanel" id="prod-panel-2" aria-labelledby="prod-tab-2" hidden>
+                                <p>Bahan: 100% Cotton Oxford · Berat: 180gsm · Ukuran: S, M, L, XL, XXL · Warna: Putih, Biru, Abu.</p>
+                            </div>
+
+                            <div class="wpui-tabs__panel"
+                                role="tabpanel" id="prod-panel-3" aria-labelledby="prod-tab-3" hidden>
+                                <p>★★★★☆ — 4.3 dari 5 · 128 ulasan · "Kualitas jahitan sangat rapi, bahan adem dan tidak mudah kusut."</p>
+                            </div>
+
+                            <div class="wpui-tabs__panel"
+                                role="tabpanel" id="prod-panel-4" aria-labelledby="prod-tab-4" hidden>
+                                <p>Pengiriman ke seluruh Indonesia. Estimasi 2–5 hari kerja. Gratis ongkir untuk pembelian di atas Rp 200.000.</p>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer class="demo-footer">
+        <span>WPUI / Tabs</span>
+        <span>no framework · no jQuery · no install</span>
+    </footer>
+
+    <script src="../components/tabs/tabs.js"></script>
+
+</body>
+
+</html>
