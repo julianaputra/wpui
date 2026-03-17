@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WPUI — Components</title>
+
+    <link rel="stylesheet" href="demo.css">
+
+    <style>
+
+        main {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 56px 40px;
+        }
+
+        .hero {
+            margin-bottom: 48px;
+        }
+
+        .hero h1 {
+            font-size: 32px;
+        }
+
+        .section-label {
+            font-size: 11px;
+            font-family: monospace;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: #A1A1AA;
+            margin-bottom: 12px;
+        }
+
+        .component-list {
+            list-style: none;
+            border: 1px solid #D9D6CE;
+            border-radius: 8px;
+            overflow: hidden;
+            background: #fff;
+        }
+
+        .component-list li {
+            border-bottom: 1px solid #D9D6CE;
+        }
+
+        .component-list li:last-child {
+            border-bottom: none;
+        }
+
+        .component-link {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 16px 20px;
+            text-decoration: none;
+            color: inherit;
+            transition: background .1s;
+        }
+
+        .component-link:hover {
+            background: #F7F6F2;
+        }
+
+        .component-link:focus-visible {
+            outline: 2px solid #1A56DB;
+            outline-offset: -2px;
+        }
+
+        .component-info strong {
+            display: block;
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 2px;
+        }
+
+        .component-info span {
+            font-size: 12px;
+            color: #71717A;
+        }
+
+        .component-arrow {
+            color: #A1A1AA;
+            font-size: 16px;
+        }
+
+        @media (max-width: 480px) {
+            main { padding-left: 20px; padding-right: 20px; }
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <header class="demo-header">
+        <span class="demo-logo">WPUI</span>
+    </header>
+
+    <main>
+
+        <div class="hero">
+            <h1>Components</h1>
+            <p>Copy-paste UI components untuk WordPress theme. No framework, no jQuery, no install.</p>
+        </div>
+
+        <p class="section-label">Demo</p>
+
+        <ul class="component-list">
+
+            <li>
+                <a href="modal-demo.html" class="component-link">
+                    <div class="component-info">
+                        <strong>Modal</strong>
+                        <span>open / close · ESC · backdrop · focus trap</span>
+                    </div>
+                    <span class="component-arrow">→</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="dropdown-demo.html" class="component-link">
+                    <div class="component-info">
+                        <strong>Dropdown</strong>
+                        <span>toggle · close outside · keyboard navigation</span>
+                    </div>
+                    <span class="component-arrow">→</span>
+                </a>
+            </li>
+
+        </ul>
+
+    </main>
+
+    <footer class="demo-footer">
+        <span>WPUI</span>
+        <span>no framework · no jQuery · no install</span>
+    </footer>
+
+</body>
+
+</html>

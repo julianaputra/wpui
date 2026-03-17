@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dropdown — WPUI Demo</title>
+
+    <link rel="stylesheet" href="demo.css">
+    <link rel="stylesheet" href="../components/dropdown/dropdown.css">
+
+</head>
+
+<body>
+
+    <header class="demo-header">
+        <a href="index.html" class="demo-logo">WPUI</a>
+    </header>
+
+    <div class="demo-body">
+
+        <a href="index.html" class="demo-back">← Components</a>
+
+        <h1>Dropdown</h1>
+        <p style="margin-bottom: 40px;">toggle · close outside · keyboard navigation · accessible</p>
+
+        <!-- 01 Basic -->
+        <div class="demo-section">
+            <h2>Basic</h2>
+            <div class="demo-row">
+
+                <div data-wpui="dropdown" class="wpui-dropdown">
+                    <button data-trigger class="wpui-dropdown__trigger">
+                        Options
+                        <span class="wpui-dropdown__arrow" aria-hidden="true"></span>
+                    </button>
+                    <ul class="wpui-dropdown__menu" data-menu role="menu" aria-hidden="true">
+                        <li role="none"><button class="wpui-dropdown__item" role="menuitem">Edit</button></li>
+                        <li role="none"><button class="wpui-dropdown__item" role="menuitem">Duplicate</button></li>
+                        <li class="wpui-dropdown__divider" role="separator"></li>
+                        <li role="none"><button class="wpui-dropdown__item wpui-dropdown__item--danger" role="menuitem">Delete</button></li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- 02 Navigation Links -->
+        <div class="demo-section">
+            <h2>Navigation Links</h2>
+            <div class="demo-row">
+
+                <div data-wpui="dropdown" class="wpui-dropdown">
+                    <button data-trigger class="wpui-dropdown__trigger">
+                        Products
+                        <span class="wpui-dropdown__arrow" aria-hidden="true"></span>
+                    </button>
+                    <ul class="wpui-dropdown__menu" data-menu role="menu" aria-hidden="true">
+                        <li role="none"><a href="#" class="wpui-dropdown__item" role="menuitem">Themes</a></li>
+                        <li role="none"><a href="#" class="wpui-dropdown__item" role="menuitem">Plugins</a></li>
+                        <li role="none"><a href="#" class="wpui-dropdown__item" role="menuitem">Blocks</a></li>
+                    </ul>
+                </div>
+
+                <div data-wpui="dropdown" class="wpui-dropdown">
+                    <button data-trigger class="wpui-dropdown__trigger">
+                        Resources
+                        <span class="wpui-dropdown__arrow" aria-hidden="true"></span>
+                    </button>
+                    <ul class="wpui-dropdown__menu" data-menu role="menu" aria-hidden="true">
+                        <li role="none"><a href="#" class="wpui-dropdown__item" role="menuitem">Documentation</a></li>
+                        <li role="none"><a href="#" class="wpui-dropdown__item" role="menuitem">GitHub</a></li>
+                        <li class="wpui-dropdown__divider" role="separator"></li>
+                        <li role="none"><a href="#" class="wpui-dropdown__item" role="menuitem">Changelog</a></li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- 03 User Menu -->
+        <div class="demo-section">
+            <h2>User Menu</h2>
+            <div class="demo-row">
+
+                <div data-wpui="dropdown" class="wpui-dropdown">
+                    <button data-trigger class="wpui-dropdown__trigger">
+                        Ahmad Fauzi
+                        <span class="wpui-dropdown__arrow" aria-hidden="true"></span>
+                    </button>
+                    <ul class="wpui-dropdown__menu" data-menu role="menu" aria-hidden="true">
+                        <li role="none"><button class="wpui-dropdown__item" role="menuitem">Profile</button></li>
+                        <li role="none"><button class="wpui-dropdown__item" role="menuitem">Settings</button></li>
+                        <li class="wpui-dropdown__divider" role="separator"></li>
+                        <li role="none"><button class="wpui-dropdown__item wpui-dropdown__item--danger" role="menuitem">Log out</button></li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <footer class="demo-footer">
+        <span>WPUI / Dropdown</span>
+        <span>no framework · no jQuery · no install</span>
+    </footer>
+
+    <script src="../components/dropdown/dropdown.js"></script>
+
+</body>
+
+</html>

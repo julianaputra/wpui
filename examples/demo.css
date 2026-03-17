@@ -1,0 +1,114 @@
+/* demo.css — shared styles for WPUI demo pages
+   Bukan bagian dari component. Jangan copy file ini ke project. */
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: sans-serif;
+    background: #F7F6F2;
+    color: #18181B;
+    min-height: 100vh;
+}
+
+/* ─── Typography ─── */
+
+h1 {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: 8px;
+}
+
+p {
+    font-size: 14px;
+    color: #52525B;
+    line-height: 1.6;
+}
+
+/* ─── Back link ─── */
+
+.demo-back {
+    display: inline-block;
+    font-size: 13px;
+    color: #71717A;
+    text-decoration: none;
+    margin-bottom: 24px;
+}
+
+.demo-back:hover {
+    color: #18181B;
+}
+
+/* ─── Demo layout ─── */
+
+.demo-body {
+    padding: 48px 40px;
+}
+
+.demo-section {
+    margin-bottom: 40px;
+}
+
+.demo-section h2 {
+    font-size: 11px;
+    font-family: monospace;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #A1A1AA;
+    margin-bottom: 16px;
+}
+
+.demo-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+/* ─── Header ─── */
+
+.demo-header {
+    padding: 16px 40px;
+    border-bottom: 1px solid #D9D6CE;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.demo-logo {
+    font-family: monospace;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    color: #18181B;
+    text-decoration: none;
+}
+
+/* ─── Footer ─── */
+
+.demo-footer {
+    border-top: 1px solid #D9D6CE;
+    padding: 16px 40px;
+    background: #fff;
+    font-size: 11px;
+    font-family: monospace;
+    color: #A1A1AA;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* ─── Responsive ─── */
+
+@media (max-width: 480px) {
+    .demo-body,
+    .demo-header,
+    .demo-footer {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}

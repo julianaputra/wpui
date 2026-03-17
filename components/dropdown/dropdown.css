@@ -1,0 +1,116 @@
+.wpui-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* ─── Trigger ─── */
+
+.wpui-dropdown__trigger {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 9px 14px;
+    border: 1px solid #D9D6CE;
+    border-radius: 6px;
+    background: #fff;
+    font-size: 14px;
+    cursor: pointer;
+    color: #18181B;
+    transition: border-color .15s, background .15s;
+}
+
+.wpui-dropdown__trigger:hover {
+    border-color: #A1A1AA;
+    background: #F7F6F2;
+}
+
+.wpui-dropdown__trigger:focus-visible {
+    outline: 2px solid #1A56DB;
+    outline-offset: 2px;
+}
+
+/* ─── Arrow icon ─── */
+
+.wpui-dropdown__arrow {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid currentColor;
+    transition: transform .2s ease;
+    flex-shrink: 0;
+}
+
+.wpui-dropdown--open .wpui-dropdown__arrow {
+    transform: rotate(180deg);
+}
+
+/* ─── Menu ─── */
+
+.wpui-dropdown__menu {
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 0;
+    z-index: 200;
+    min-width: 180px;
+    background: #fff;
+    border: 1px solid #D9D6CE;
+    border-radius: 8px;
+    padding: 4px;
+    list-style: none;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, .08);
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-6px);
+    transition: opacity .15s ease, visibility .15s ease, transform .15s ease;
+}
+
+.wpui-dropdown--open .wpui-dropdown__menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* ─── Items ─── */
+
+.wpui-dropdown__item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    background: none;
+    font-size: 14px;
+    text-align: left;
+    color: #18181B;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background .1s;
+}
+
+.wpui-dropdown__item:hover,
+.wpui-dropdown__item:focus {
+    background: #F7F6F2;
+    outline: none;
+}
+
+.wpui-dropdown__item--danger {
+    color: #DC2626;
+}
+
+.wpui-dropdown__item--danger:hover,
+.wpui-dropdown__item--danger:focus {
+    background: #FEF2F2;
+}
+
+/* ─── Divider ─── */
+
+.wpui-dropdown__divider {
+    height: 1px;
+    background: #D9D6CE;
+    margin: 4px 0;
+}

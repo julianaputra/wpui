@@ -1,68 +1,118 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
 
     <meta charset="UTF-8">
-    <title>WPUI Modal Demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modal — WPUI Demo</title>
 
+    <link rel="stylesheet" href="demo.css">
     <link rel="stylesheet" href="../components/modal/modal.css">
 
 </head>
 
 <body>
 
-    <h1>WPUI Modal Demo</h1>
+    <header class="demo-header">
+        <a href="index.html" class="demo-logo">WPUI</a>
+    </header>
 
-    <button data-modal="userModal">
-        Open User Modal
-    </button>
+    <div class="demo-body">
 
-    <a href="#" data-modal="userModal">
-        View Details
-    </a>
+        <a href="index.html" class="demo-back">← Components</a>
 
-    <div class="card">
-        <button data-modal="userModal">
-            Open from Card
-        </button>
-    </div>
+        <h1>Modal</h1>
+        <p style="margin-bottom: 40px;">open / close · ESC · backdrop · focus trap · focus return · accessible</p>
 
-    <div id="userModal" data-wpui="modal" class="wpui-modal">
+        <!-- 01 Basic -->
+        <div class="demo-section">
+            <h2>Basic</h2>
+            <div class="demo-row">
 
-        <div class="wpui-modal__backdrop" data-backdrop>
+                <div data-wpui="modal" id="basicModal" class="wpui-modal">
+                    <button data-open>Open Modal</button>
+                    <div class="wpui-modal__backdrop" data-backdrop>
+                        <div class="wpui-modal__panel" data-panel
+                            role="dialog" aria-modal="true" aria-hidden="true"
+                            aria-labelledby="basicModal-title">
+                            <button data-close class="wpui-modal__close" aria-label="Close modal">&times;</button>
+                            <h2 id="basicModal-title">Basic Modal</h2>
+                            <p>Trigger menggunakan <code>[data-open]</code> di dalam wrapper. Tekan ESC atau klik backdrop untuk menutup.</p>
+                        </div>
+                    </div>
+                </div>
 
-            <div class="wpui-modal__panel" data-panel>
-
-                <button data-close>×</button>
-
-                <h2>User Info</h2>
-                <p>This modal can be triggered from anywhere.</p>
-                <a href="#" data-modal="detailModal">
-                    View Details
-                </a>
             </div>
-
         </div>
 
+        <!-- 02 External Triggers -->
+        <div class="demo-section">
+            <h2>External Triggers</h2>
+            <div class="demo-row">
+
+                <button data-modal="userModal">Open from button</button>
+                <a href="#" data-modal="userModal">Open from link</a>
+
+            </div>
+        </div>
+
+        <!-- 03 Stacked -->
+        <div class="demo-section">
+            <h2>Stacked Modals</h2>
+            <div class="demo-row">
+
+                <button data-modal="firstModal">Open First Modal</button>
+
+            </div>
+        </div>
+
+    </div>
+
+    <!-- ─── Modals ─── -->
+
+    <div id="userModal" data-wpui="modal" class="wpui-modal">
+        <div class="wpui-modal__backdrop" data-backdrop>
+            <div class="wpui-modal__panel" data-panel
+                role="dialog" aria-modal="true" aria-hidden="true"
+                aria-labelledby="userModal-title">
+                <button data-close class="wpui-modal__close" aria-label="Close modal">&times;</button>
+                <h2 id="userModal-title">User Info</h2>
+                <p>Modal ini dibuka dari trigger di luar wrapper menggunakan <code>data-modal="userModal"</code>.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="firstModal" data-wpui="modal" class="wpui-modal">
+        <div class="wpui-modal__backdrop" data-backdrop>
+            <div class="wpui-modal__panel" data-panel
+                role="dialog" aria-modal="true" aria-hidden="true"
+                aria-labelledby="firstModal-title">
+                <button data-close class="wpui-modal__close" aria-label="Close modal">&times;</button>
+                <h2 id="firstModal-title">First Modal</h2>
+                <p>Klik tombol di bawah untuk membuka modal kedua.</p>
+                <br>
+                <button data-modal="detailModal">Open Detail →</button>
+            </div>
+        </div>
     </div>
 
     <div id="detailModal" data-wpui="modal" class="wpui-modal">
-
         <div class="wpui-modal__backdrop" data-backdrop>
-
-            <div class="wpui-modal__panel" data-panel>
-
-                <button data-close>×</button>
-
-                <h2>Detail Info</h2>
-                <p>This modal can be triggered from anywhere.</p>
-
+            <div class="wpui-modal__panel" data-panel
+                role="dialog" aria-modal="true" aria-hidden="true"
+                aria-labelledby="detailModal-title">
+                <button data-close class="wpui-modal__close" aria-label="Close modal">&times;</button>
+                <h2 id="detailModal-title">Detail Info</h2>
+                <p>Modal kedua. Saat ditutup, fokus kembali ke "Open Detail →".</p>
             </div>
-
         </div>
-
     </div>
+
+    <footer class="demo-footer">
+        <span>WPUI / Modal</span>
+        <span>no framework · no jQuery · no install</span>
+    </footer>
 
     <script src="../components/modal/modal.js"></script>
 
