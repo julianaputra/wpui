@@ -1,0 +1,78 @@
+.wpui-modal__backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, .5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .25s ease, visibility .25s ease;
+}
+
+.wpui-modal--open .wpui-modal__backdrop {
+    opacity: 1;
+    visibility: visible;
+}
+
+.wpui-modal__panel {
+    background: white;
+    padding: 32px;
+    width: 90%;
+    max-width: 500px;
+    border-radius: 8px;
+    position: relative;
+
+    transform: translateY(20px);
+    opacity: 0;
+    transition: transform .25s ease, opacity .25s ease;
+}
+
+.wpui-modal--open .wpui-modal__panel {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.wpui-modal__close {
+    position: absolute;
+    right: 12px;
+    top: 12px;
+    width: 32px;
+    height: 32px;
+    border: none;
+    background: none;
+    font-size: 20px;
+    line-height: 1;
+    cursor: pointer;
+    border-radius: 4px;
+    color: #555;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.wpui-modal__close:hover {
+    background: #f0f0f0;
+    color: #000;
+}
+
+.wpui-modal__close:focus-visible {
+    outline: 2px solid #000;
+    outline-offset: 2px;
+}
+
+.wpui-btn {
+    padding: 10px 16px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background: #fff;
+    font-size: 14px;
+}
+
+.wpui-btn:focus-visible {
+    outline: 2px solid #000;
+    outline-offset: 2px;
+}

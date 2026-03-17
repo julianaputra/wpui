@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="UTF-8">
+    <title>WPUI Modal Demo</title>
+
+    <link rel="stylesheet" href="../components/modal/modal.css">
+
+</head>
+
+<body>
+
+    <h1>WPUI Modal Demo</h1>
+
+    <button data-modal="userModal">
+        Open User Modal
+    </button>
+
+    <a href="#" data-modal="userModal">
+        View Details
+    </a>
+
+    <div class="card">
+        <button data-modal="userModal">
+            Open from Card
+        </button>
+    </div>
+
+    <div id="userModal" data-wpui="modal" class="wpui-modal">
+
+        <div class="wpui-modal__backdrop" data-backdrop>
+
+            <div class="wpui-modal__panel" data-panel>
+
+                <button data-close>×</button>
+
+                <h2>User Info</h2>
+                <p>This modal can be triggered from anywhere.</p>
+                <a href="#" data-modal="detailModal">
+                    View Details
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div id="detailModal" data-wpui="modal" class="wpui-modal">
+
+        <div class="wpui-modal__backdrop" data-backdrop>
+
+            <div class="wpui-modal__panel" data-panel>
+
+                <button data-close>×</button>
+
+                <h2>Detail Info</h2>
+                <p>This modal can be triggered from anywhere.</p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="../components/modal/modal.js"></script>
+
+</body>
+
+</html>
