@@ -2,22 +2,30 @@
    Not part of any component. Do not copy to your project. */
 
 /* ─── Reset ─── */
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
 /* ─── Tokens ─── */
 :root {
-    --bg:         #F8F7F4;
-    --surface:    #FFFFFF;
-    --surface-2:  #F0EDE7;
-    --border:     #E2DDD6;
-    --text:       #1A1917;
-    --muted:      #6B6860;
-    --accent:     #B8720A;
+    --bg: #F8F7F4;
+    --surface: #FFFFFF;
+    --surface-2: #F0EDE7;
+    --border: #E2DDD6;
+    --text: #1A1917;
+    --muted: #6B6860;
+    --accent: #B8720A;
     --accent-dim: rgba(184, 114, 10, 0.08);
-    --stage-bg:   #EEEAE3;
+    --stage-bg: #EEEAE3;
 }
 
-html { scroll-behavior: smooth; }
+html {
+    scroll-behavior: smooth;
+}
 
 body {
     font-family: 'DM Sans', sans-serif;
@@ -32,7 +40,9 @@ body {
 
 .demo-header {
     position: fixed;
-    top: 0; left: 0; right: 0;
+    top: 0;
+    left: 0;
+    right: 0;
     z-index: 100;
     height: 56px;
     display: flex;
@@ -61,7 +71,9 @@ body {
     transition: color .15s;
 }
 
-.demo-back:hover { color: var(--text); }
+.demo-back:hover {
+    color: var(--text);
+}
 
 /* ─── Main layout ─── */
 
@@ -139,6 +151,67 @@ body {
     padding: 48px 32px;
 }
 
+/* ─── How it works ─── */
+
+.how-section {
+    margin-top: 64px;
+    border-top: 1px solid var(--border);
+    padding-top: 48px;
+}
+
+.how-section__title {
+    font-family: 'Manrope', sans-serif;
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    margin-bottom: 20px;
+}
+
+.how-list {
+    list-style: none;
+    counter-reset: item;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.how-list li {
+    counter-increment: item;
+    position: relative;
+    padding-left: 36px;
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.65;
+}
+
+.how-list li::before {
+    content: counter(item);
+    position: absolute;
+    left: 0;
+    top: 1px;
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: var(--accent);
+    background: var(--accent-dim);
+    width: 22px;
+    height: 22px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.how-list code {
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    padding: 1px 5px;
+    border-radius: 3px;
+    color: var(--text);
+}
+
 /* ─── Code section ─── */
 
 .code-section {
@@ -185,18 +258,26 @@ body {
     transition: background .1s, color .1s;
 }
 
-.code-tab:hover { color: var(--text); }
+.code-tab:hover {
+    color: var(--text);
+}
 
 .code-tab--active {
     background: var(--surface);
     color: var(--text);
-    box-shadow: 0 1px 3px rgba(0,0,0,.06);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .06);
 }
 
 /* ─── Code panel ─── */
 
-.code-panel { display: none; position: relative; }
-.code-panel--active { display: block; }
+.code-panel {
+    display: none;
+    position: relative;
+}
+
+.code-panel--active {
+    display: block;
+}
 
 .code-panel pre {
     background: var(--surface);
@@ -230,8 +311,16 @@ body {
     transition: color .15s, border-color .15s, background .15s;
 }
 
-.copy-btn:hover { color: var(--text); border-color: var(--muted); background: var(--surface); }
-.copy-btn--copied { color: #2A6E2A !important; border-color: #2A6E2A !important; }
+.copy-btn:hover {
+    color: var(--text);
+    border-color: var(--muted);
+    background: var(--surface);
+}
+
+.copy-btn--copied {
+    color: #2A6E2A !important;
+    border-color: #2A6E2A !important;
+}
 
 /* ─── Footer ─── */
 
@@ -249,10 +338,29 @@ body {
 /* ─── Responsive ─── */
 
 @media (max-width: 600px) {
-    .demo-header { padding: 0 20px; }
-    .demo-main   { padding: 40px 20px 60px; }
-    .demo-footer { padding: 16px 20px; flex-direction: column; gap: 6px; }
-    .demo-stage  { padding: 28px 20px; }
-    .code-panel pre { padding: 20px; }
-    .demo-hero__title { font-size: 30px; }
+    .demo-header {
+        padding: 0 20px;
+    }
+
+    .demo-main {
+        padding: 40px 20px 60px;
+    }
+
+    .demo-footer {
+        padding: 16px 20px;
+        flex-direction: column;
+        gap: 6px;
+    }
+
+    .demo-stage {
+        padding: 28px 20px;
+    }
+
+    .code-panel pre {
+        padding: 20px;
+    }
+
+    .demo-hero__title {
+        font-size: 30px;
+    }
 }
