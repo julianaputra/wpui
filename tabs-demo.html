@@ -5,38 +5,43 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tabs — WPUI Demo</title>
+    <title>Tabs — WPUI</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@700;800&family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="demo.css">
     <link rel="stylesheet" href="components/tabs/tabs.css">
 
     <style>
-        .demo-tabs-wrap {
-            max-width: 560px;
-            width: 100%;
-        }
+        .tabs-wrap { max-width: 560px; width: 100%; }
     </style>
 
 </head>
 
 <body>
 
+    <!-- ─── Header ─── -->
     <header class="demo-header">
         <a href="index.html" class="demo-logo">WPUI</a>
+        <a href="index.html" class="demo-back">← Components</a>
     </header>
 
-    <div class="demo-body">
+    <main class="demo-main">
 
-        <a href="index.html" class="demo-back">← Components</a>
+        <!-- ─── Hero ─── -->
+        <div class="demo-hero">
+            <p class="demo-hero__label">component · 04</p>
+            <h1 class="demo-hero__title">Tabs</h1>
+            <p class="demo-hero__desc">switch tab · arrow key navigation · aria-selected · aria-controls · accessible</p>
+        </div>
 
-        <h1>Tabs</h1>
-        <p style="margin-bottom: 40px;">switch tab · arrow keys · aria-selected · aria-controls · accessible</p>
-
-        <!-- 01 Basic -->
+        <!-- ─── 01 Basic ─── -->
         <div class="demo-section">
-            <h2>Basic</h2>
-            <div class="demo-row">
-                <div class="demo-tabs-wrap">
+            <p class="demo-section__label">Basic</p>
+            <div class="demo-stage">
+                <div class="tabs-wrap">
 
                     <div data-wpui="tabs" class="wpui-tabs">
 
@@ -62,17 +67,17 @@
 
                             <div class="wpui-tabs__panel wpui-tabs__panel--active"
                                 role="tabpanel" id="basic-panel-1" aria-labelledby="basic-tab-1">
-                                <p>WPUI adalah kumpulan UI component untuk WordPress theme. Copy-paste, tanpa framework, tanpa jQuery. Developer cukup ambil kode yang mereka butuhkan.</p>
+                                <p>WPUI is a collection of UI components for WordPress themes. Copy-paste, no framework, no jQuery. Developers only take the code they need.</p>
                             </div>
 
                             <div class="wpui-tabs__panel"
                                 role="tabpanel" id="basic-panel-2" aria-labelledby="basic-tab-2" hidden>
-                                <p>Ringan, accessible, dan konsisten. Setiap component menggunakan pola HTML dan JS yang sama sehingga mudah dipelajari dan diprediksi.</p>
+                                <p>Lightweight, accessible, and consistent. Each component uses the same HTML and JS patterns — easy to learn and predictable to use.</p>
                             </div>
 
                             <div class="wpui-tabs__panel"
                                 role="tabpanel" id="basic-panel-3" aria-labelledby="basic-tab-3" hidden>
-                                <p>Gratis selamanya. Open source. Tidak ada lisensi, tidak ada subscription, tidak ada catch.</p>
+                                <p>Free forever. Open source. No license, no subscription, no catch.</p>
                             </div>
 
                         </div>
@@ -83,15 +88,15 @@
             </div>
         </div>
 
-        <!-- 02 Product Detail -->
+        <!-- ─── 02 Product Detail ─── -->
         <div class="demo-section">
-            <h2>Product Detail</h2>
-            <div class="demo-row">
-                <div class="demo-tabs-wrap">
+            <p class="demo-section__label">Product Detail</p>
+            <div class="demo-stage">
+                <div class="tabs-wrap">
 
                     <div data-wpui="tabs" class="wpui-tabs">
 
-                        <div class="wpui-tabs__list" role="tablist" aria-label="Product detail tabs">
+                        <div class="wpui-tabs__list" role="tablist" aria-label="Product tabs">
                             <button class="wpui-tabs__tab wpui-tabs__tab--active"
                                 role="tab" aria-selected="true"
                                 aria-controls="prod-panel-1" id="prod-tab-1" tabindex="0">
@@ -118,22 +123,22 @@
 
                             <div class="wpui-tabs__panel wpui-tabs__panel--active"
                                 role="tabpanel" id="prod-panel-1" aria-labelledby="prod-tab-1">
-                                <p>Kemeja Oxford premium dengan bahan katun pilihan. Nyaman dipakai sepanjang hari, cocok untuk suasana formal maupun kasual.</p>
+                                <p>Premium Oxford shirt made from carefully selected cotton fabric. Comfortable all day, suitable for both formal and casual settings.</p>
                             </div>
 
                             <div class="wpui-tabs__panel"
                                 role="tabpanel" id="prod-panel-2" aria-labelledby="prod-tab-2" hidden>
-                                <p>Bahan: 100% Cotton Oxford · Berat: 180gsm · Ukuran: S, M, L, XL, XXL · Warna: Putih, Biru, Abu.</p>
+                                <p>Material: 100% Cotton Oxford · Weight: 180gsm · Sizes: S, M, L, XL, XXL · Colors: White, Blue, Grey.</p>
                             </div>
 
                             <div class="wpui-tabs__panel"
                                 role="tabpanel" id="prod-panel-3" aria-labelledby="prod-tab-3" hidden>
-                                <p>★★★★☆ — 4.3 dari 5 · 128 ulasan · "Kualitas jahitan sangat rapi, bahan adem dan tidak mudah kusut."</p>
+                                <p>★★★★☆ — 4.3 out of 5 · 128 reviews · "Stitching quality is excellent, fabric is cool and wrinkle-resistant."</p>
                             </div>
 
                             <div class="wpui-tabs__panel"
                                 role="tabpanel" id="prod-panel-4" aria-labelledby="prod-tab-4" hidden>
-                                <p>Pengiriman ke seluruh Indonesia. Estimasi 2–5 hari kerja. Gratis ongkir untuk pembelian di atas Rp 200.000.</p>
+                                <p>Nationwide shipping. Estimated 2–5 business days. Free shipping on orders over $25.</p>
                             </div>
 
                         </div>
@@ -144,7 +149,191 @@
             </div>
         </div>
 
-    </div>
+        <!-- ─── Get the code ─── -->
+        <section class="code-section">
+            <h2 class="code-section__title">Get the code</h2>
+
+            <div class="code-tabs">
+                <div class="code-tabs__bar">
+                    <button class="code-tab code-tab--active" data-tab="html">HTML</button>
+                    <button class="code-tab" data-tab="css">CSS</button>
+                    <button class="code-tab" data-tab="js">JS</button>
+                </div>
+
+                <div class="code-panel code-panel--active" data-panel="html">
+                    <button class="copy-btn">Copy</button>
+                    <pre><code>&lt;div data-wpui="tabs" class="wpui-tabs"&gt;
+
+    &lt;div class="wpui-tabs__list" role="tablist" aria-label="My tabs"&gt;
+
+        &lt;button class="wpui-tabs__tab wpui-tabs__tab--active"
+            role="tab" aria-selected="true"
+            aria-controls="panel-1" id="tab-1" tabindex="0"&gt;
+            Tab One
+        &lt;/button&gt;
+
+        &lt;button class="wpui-tabs__tab"
+            role="tab" aria-selected="false"
+            aria-controls="panel-2" id="tab-2" tabindex="-1"&gt;
+            Tab Two
+        &lt;/button&gt;
+
+        &lt;button class="wpui-tabs__tab"
+            role="tab" aria-selected="false"
+            aria-controls="panel-3" id="tab-3" tabindex="-1"&gt;
+            Tab Three
+        &lt;/button&gt;
+
+    &lt;/div&gt;
+
+    &lt;div class="wpui-tabs__panels"&gt;
+
+        &lt;div class="wpui-tabs__panel wpui-tabs__panel--active"
+            role="tabpanel" id="panel-1" aria-labelledby="tab-1"&gt;
+            &lt;p&gt;Content for tab one.&lt;/p&gt;
+        &lt;/div&gt;
+
+        &lt;div class="wpui-tabs__panel"
+            role="tabpanel" id="panel-2" aria-labelledby="tab-2" hidden&gt;
+            &lt;p&gt;Content for tab two.&lt;/p&gt;
+        &lt;/div&gt;
+
+        &lt;div class="wpui-tabs__panel"
+            role="tabpanel" id="panel-3" aria-labelledby="tab-3" hidden&gt;
+            &lt;p&gt;Content for tab three.&lt;/p&gt;
+        &lt;/div&gt;
+
+    &lt;/div&gt;
+
+&lt;/div&gt;</code></pre>
+                </div>
+
+                <div class="code-panel" data-panel="css">
+                    <button class="copy-btn">Copy</button>
+                    <pre><code>.wpui-tabs__list {
+    display: flex;
+    border-bottom: 1px solid #D9D6CE;
+    gap: 2px;
+}
+
+.wpui-tabs__tab {
+    position: relative;
+    padding: 10px 16px;
+    border: none;
+    background: none;
+    font-size: 14px;
+    font-weight: 500;
+    color: #71717A;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: color .15s;
+}
+
+.wpui-tabs__tab::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: #18181B;
+    opacity: 0;
+    transition: opacity .15s;
+}
+
+.wpui-tabs__tab:hover { color: #18181B; }
+.wpui-tabs__tab--active { color: #18181B; }
+.wpui-tabs__tab--active::after { opacity: 1; }
+
+.wpui-tabs__tab:focus-visible {
+    outline: 2px solid #1A56DB;
+    outline-offset: -2px;
+    border-radius: 4px;
+}
+
+.wpui-tabs__panels { padding-top: 20px; }
+
+.wpui-tabs__panel {
+    font-size: 14px;
+    color: #52525B;
+    line-height: 1.7;
+}
+
+.wpui-tabs__panel--active {
+    animation: wpui-tabs-in .2s ease;
+}
+
+@keyframes wpui-tabs-in {
+    from { opacity: 0; transform: translateY(6px); }
+    to   { opacity: 1; transform: translateY(0); }
+}</code></pre>
+                </div>
+
+                <div class="code-panel" data-panel="js">
+                    <button class="copy-btn">Copy</button>
+                    <pre><code>(function () {
+
+  const initTabs = (root) =&gt; {
+
+    const tabs = Array.from(root.querySelectorAll('[role="tab"]'))
+    const panels = Array.from(root.querySelectorAll('[role="tabpanel"]'))
+
+    if (!tabs.length || !panels.length) return
+
+    const activate = (tab) =&gt; {
+      tabs.forEach((t) =&gt; {
+        t.setAttribute('aria-selected', 'false')
+        t.setAttribute('tabindex', '-1')
+        t.classList.remove('wpui-tabs__tab--active')
+      })
+
+      panels.forEach((p) =&gt; {
+        p.setAttribute('hidden', '')
+        p.classList.remove('wpui-tabs__panel--active')
+      })
+
+      tab.setAttribute('aria-selected', 'true')
+      tab.setAttribute('tabindex', '0')
+      tab.classList.add('wpui-tabs__tab--active')
+
+      const panel = root.querySelector('#' + tab.getAttribute('aria-controls'))
+      panel?.removeAttribute('hidden')
+      panel?.classList.add('wpui-tabs__panel--active')
+    }
+
+    tabs.forEach((tab) =&gt; {
+      tab.addEventListener('click', () =&gt; activate(tab))
+    })
+
+    root.querySelector('[role="tablist"]').addEventListener('keydown', (e) =&gt; {
+      const idx = tabs.indexOf(document.activeElement)
+      if (idx === -1) return
+
+      let next = null
+
+      switch (e.key) {
+        case 'ArrowRight': next = tabs[(idx + 1) % tabs.length]; break
+        case 'ArrowLeft':  next = tabs[(idx - 1 + tabs.length) % tabs.length]; break
+        case 'Home':       next = tabs[0]; break
+        case 'End':        next = tabs[tabs.length - 1]; break
+        default: return
+      }
+
+      e.preventDefault()
+      next.focus()
+      activate(next)
+    })
+
+  }
+
+  document.querySelectorAll('[data-wpui="tabs"]').forEach(initTabs)
+
+})()</code></pre>
+                </div>
+            </div>
+        </section>
+
+    </main>
 
     <footer class="demo-footer">
         <span>WPUI / Tabs</span>
@@ -152,6 +341,28 @@
     </footer>
 
     <script src="components/tabs/tabs.js"></script>
+    <script>
+        document.querySelectorAll('.code-tab').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const target = btn.dataset.tab
+                btn.closest('.code-tabs').querySelectorAll('.code-tab').forEach(t => t.classList.remove('code-tab--active'))
+                btn.closest('.code-tabs').querySelectorAll('.code-panel').forEach(p => p.classList.remove('code-panel--active'))
+                btn.classList.add('code-tab--active')
+                btn.closest('.code-tabs').querySelector(`[data-panel="${target}"]`).classList.add('code-panel--active')
+            })
+        })
+
+        document.querySelectorAll('.copy-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const code = btn.closest('.code-panel').querySelector('code').textContent
+                navigator.clipboard.writeText(code).then(() => {
+                    btn.textContent = 'Copied!'
+                    btn.classList.add('copy-btn--copied')
+                    setTimeout(() => { btn.textContent = 'Copy'; btn.classList.remove('copy-btn--copied') }, 2000)
+                })
+            })
+        })
+    </script>
 
 </body>
 

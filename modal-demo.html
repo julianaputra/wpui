@@ -5,7 +5,11 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modal — WPUI Demo</title>
+    <title>Modal — WPUI</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@700;800&family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="demo.css">
     <link rel="stylesheet" href="components/modal/modal.css">
@@ -14,31 +18,35 @@
 
 <body>
 
+    <!-- ─── Header ─── -->
     <header class="demo-header">
         <a href="index.html" class="demo-logo">WPUI</a>
+        <a href="index.html" class="demo-back">← Components</a>
     </header>
 
-    <div class="demo-body">
+    <main class="demo-main">
 
-        <a href="index.html" class="demo-back">← Components</a>
+        <!-- ─── Hero ─── -->
+        <div class="demo-hero">
+            <p class="demo-hero__label">component · 01</p>
+            <h1 class="demo-hero__title">Modal</h1>
+            <p class="demo-hero__desc">open / close · ESC · backdrop · focus trap · focus return · external trigger · accessible</p>
+        </div>
 
-        <h1>Modal</h1>
-        <p style="margin-bottom: 40px;">open / close · ESC · backdrop · focus trap · focus return · accessible</p>
-
-        <!-- 01 Basic -->
+        <!-- ─── 01 Basic ─── -->
         <div class="demo-section">
-            <h2>Basic</h2>
-            <div class="demo-row">
+            <p class="demo-section__label">Basic</p>
+            <div class="demo-stage">
 
                 <div data-wpui="modal" id="basicModal" class="wpui-modal">
-                    <button data-open>Open Modal</button>
+                    <button data-open class="wpui-btn">Open Modal</button>
                     <div class="wpui-modal__backdrop" data-backdrop>
                         <div class="wpui-modal__panel" data-panel
                             role="dialog" aria-modal="true" aria-hidden="true"
                             aria-labelledby="basicModal-title">
                             <button data-close class="wpui-modal__close" aria-label="Close modal">&times;</button>
                             <h2 id="basicModal-title">Basic Modal</h2>
-                            <p>Trigger menggunakan <code>[data-open]</code> di dalam wrapper. Tekan ESC atau klik backdrop untuk menutup.</p>
+                            <p>Trigger using <code>[data-open]</code> inside the wrapper. Press ESC or click the backdrop to close.</p>
                         </div>
                     </div>
                 </div>
@@ -46,30 +54,243 @@
             </div>
         </div>
 
-        <!-- 02 External Triggers -->
+        <!-- ─── 02 External Triggers ─── -->
         <div class="demo-section">
-            <h2>External Triggers</h2>
-            <div class="demo-row">
+            <p class="demo-section__label">External Triggers</p>
+            <div class="demo-stage">
 
-                <button data-modal="userModal">Open from button</button>
-                <a href="#" data-modal="userModal">Open from link</a>
+                <button data-modal="userModal" class="wpui-btn">Open from button</button>
+                <a href="#" data-modal="userModal" style="font-size:14px;color:#18181B;">Open from link</a>
 
             </div>
         </div>
 
-        <!-- 03 Stacked -->
+        <!-- ─── 03 Stacked ─── -->
         <div class="demo-section">
-            <h2>Stacked Modals</h2>
-            <div class="demo-row">
+            <p class="demo-section__label">Stacked Modals</p>
+            <div class="demo-stage">
 
-                <button data-modal="firstModal">Open First Modal</button>
+                <button data-modal="firstModal" class="wpui-btn">Open First Modal</button>
 
             </div>
         </div>
 
-    </div>
+        <!-- ─── Get the code ─── -->
+        <section class="code-section">
+            <h2 class="code-section__title">Get the code</h2>
 
-    <!-- ─── Modals ─── -->
+            <div class="code-tabs">
+                <div class="code-tabs__bar">
+                    <button class="code-tab code-tab--active" data-tab="html">HTML</button>
+                    <button class="code-tab" data-tab="css">CSS</button>
+                    <button class="code-tab" data-tab="js">JS</button>
+                </div>
+
+                <div class="code-panel code-panel--active" data-panel="html">
+                    <button class="copy-btn">Copy</button>
+                    <pre><code>&lt;div data-wpui="modal" id="my-modal" class="wpui-modal"&gt;
+
+    &lt;button data-open class="wpui-btn"&gt;Open Modal&lt;/button&gt;
+
+    &lt;div class="wpui-modal__backdrop" data-backdrop&gt;
+        &lt;div class="wpui-modal__panel" data-panel
+            role="dialog"
+            aria-modal="true"
+            aria-hidden="true"
+            aria-labelledby="my-modal-title"&gt;
+
+            &lt;button data-close class="wpui-modal__close" aria-label="Close modal"&gt;&amp;times;&lt;/button&gt;
+            &lt;h2 id="my-modal-title"&gt;Modal Title&lt;/h2&gt;
+            &lt;p&gt;Modal content goes here.&lt;/p&gt;
+
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;!-- External trigger (optional) --&gt;
+&lt;button data-modal="my-modal"&gt;Open from anywhere&lt;/button&gt;</code></pre>
+                </div>
+
+                <div class="code-panel" data-panel="css">
+                    <button class="copy-btn">Copy</button>
+                    <pre><code>.wpui-modal__backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, .5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .25s ease, visibility .25s ease;
+}
+
+.wpui-modal--open .wpui-modal__backdrop {
+    opacity: 1;
+    visibility: visible;
+}
+
+.wpui-modal__panel {
+    background: white;
+    padding: 32px;
+    width: 90%;
+    max-width: 500px;
+    border-radius: 8px;
+    position: relative;
+
+    transform: translateY(20px);
+    opacity: 0;
+    transition: transform .25s ease, opacity .25s ease;
+}
+
+.wpui-modal--open .wpui-modal__panel {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.wpui-modal__close {
+    position: absolute;
+    right: 12px;
+    top: 12px;
+    width: 32px;
+    height: 32px;
+    border: none;
+    background: none;
+    font-size: 20px;
+    line-height: 1;
+    cursor: pointer;
+    border-radius: 4px;
+    color: #555;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.wpui-modal__close:hover {
+    background: #f0f0f0;
+    color: #000;
+}
+
+.wpui-modal__close:focus-visible {
+    outline: 2px solid #000;
+    outline-offset: 2px;
+}
+
+.wpui-btn {
+    padding: 10px 16px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background: #fff;
+    font-size: 14px;
+}
+
+.wpui-btn:focus-visible {
+    outline: 2px solid #000;
+    outline-offset: 2px;
+}</code></pre>
+                </div>
+
+                <div class="code-panel" data-panel="js">
+                    <button class="copy-btn">Copy</button>
+                    <pre><code>(function () {
+
+  const FOCUSABLE = [
+    'a[href]',
+    'button:not([disabled])',
+    'textarea',
+    'input',
+    'select',
+    '[tabindex]:not([tabindex="-1"])'
+  ].join(',')
+
+  const modals = {}
+
+  const initModal = (root) => {
+
+    const id = root.id
+    const openBtn = root.querySelector('[data-open]')
+    const closeBtn = root.querySelector('[data-close]')
+    const backdrop = root.querySelector('[data-backdrop]')
+    const panel = root.querySelector('[data-panel]')
+
+    let focusable = []
+    let first, last, opener
+
+    const updateFocusable = () =&gt; {
+      focusable = Array.from(panel.querySelectorAll(FOCUSABLE))
+      first = focusable[0]
+      last = focusable[focusable.length - 1]
+    }
+
+    const open = (trigger) =&gt; {
+      opener = trigger || openBtn || document.activeElement
+
+      root.classList.add('wpui-modal--open')
+      panel.setAttribute('aria-hidden', 'false')
+      document.body.style.overflow = 'hidden'
+
+      updateFocusable()
+      setTimeout(() =&gt; first?.focus(), 50)
+    }
+
+    const close = () =&gt; {
+      root.classList.remove('wpui-modal--open')
+      panel.setAttribute('aria-hidden', 'true')
+      document.body.style.overflow = ''
+
+      opener?.focus()
+      opener = null
+    }
+
+    openBtn?.addEventListener('click', () =&gt; open(openBtn))
+    closeBtn?.addEventListener('click', close)
+
+    backdrop?.addEventListener('click', (e) =&gt; {
+      if (!panel.contains(e.target)) close()
+    })
+
+    document.addEventListener('keydown', (e) =&gt; {
+      if (!root.classList.contains('wpui-modal--open')) return
+
+      if (e.key === 'Escape') { close(); return }
+
+      if (e.key === 'Tab') {
+        updateFocusable()
+        if (focusable.length === 0) { e.preventDefault(); return }
+
+        if (e.shiftKey) {
+          if (document.activeElement === first) { e.preventDefault(); last.focus() }
+        } else {
+          if (document.activeElement === last) { e.preventDefault(); first.focus() }
+        }
+      }
+    })
+
+    if (id) modals[id] = { open, close }
+  }
+
+  document.querySelectorAll('[data-wpui="modal"]').forEach(initModal)
+
+  // External trigger: &lt;button data-modal="modal-id"&gt;Open&lt;/button&gt;
+  document.addEventListener('click', (e) =&gt; {
+    const trigger = e.target.closest('[data-modal]')
+    if (!trigger) return
+    e.preventDefault()
+    modals[trigger.dataset.modal]?.open(trigger)
+  })
+
+})()</code></pre>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ─── Modals (outside main) ─── -->
 
     <div id="userModal" data-wpui="modal" class="wpui-modal">
         <div class="wpui-modal__backdrop" data-backdrop>
@@ -77,8 +298,8 @@
                 role="dialog" aria-modal="true" aria-hidden="true"
                 aria-labelledby="userModal-title">
                 <button data-close class="wpui-modal__close" aria-label="Close modal">&times;</button>
-                <h2 id="userModal-title">User Info</h2>
-                <p>Modal ini dibuka dari trigger di luar wrapper menggunakan <code>data-modal="userModal"</code>.</p>
+                <h2 id="userModal-title">External Trigger</h2>
+                <p>Opened using <code>data-modal="userModal"</code> from outside the wrapper.</p>
             </div>
         </div>
     </div>
@@ -90,9 +311,9 @@
                 aria-labelledby="firstModal-title">
                 <button data-close class="wpui-modal__close" aria-label="Close modal">&times;</button>
                 <h2 id="firstModal-title">First Modal</h2>
-                <p>Klik tombol di bawah untuk membuka modal kedua.</p>
+                <p>Click below to open a second modal.</p>
                 <br>
-                <button data-modal="detailModal">Open Detail →</button>
+                <button data-modal="detailModal" class="wpui-btn">Open Detail →</button>
             </div>
         </div>
     </div>
@@ -103,8 +324,8 @@
                 role="dialog" aria-modal="true" aria-hidden="true"
                 aria-labelledby="detailModal-title">
                 <button data-close class="wpui-modal__close" aria-label="Close modal">&times;</button>
-                <h2 id="detailModal-title">Detail Info</h2>
-                <p>Modal kedua. Saat ditutup, fokus kembali ke "Open Detail →".</p>
+                <h2 id="detailModal-title">Detail Modal</h2>
+                <p>On close, focus returns to the "Open Detail →" button.</p>
             </div>
         </div>
     </div>
@@ -115,6 +336,28 @@
     </footer>
 
     <script src="components/modal/modal.js"></script>
+    <script>
+        document.querySelectorAll('.code-tab').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const target = btn.dataset.tab
+                btn.closest('.code-tabs').querySelectorAll('.code-tab').forEach(t => t.classList.remove('code-tab--active'))
+                btn.closest('.code-tabs').querySelectorAll('.code-panel').forEach(p => p.classList.remove('code-panel--active'))
+                btn.classList.add('code-tab--active')
+                btn.closest('.code-tabs').querySelector(`[data-panel="${target}"]`).classList.add('code-panel--active')
+            })
+        })
+
+        document.querySelectorAll('.copy-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const code = btn.closest('.code-panel').querySelector('code').textContent
+                navigator.clipboard.writeText(code).then(() => {
+                    btn.textContent = 'Copied!'
+                    btn.classList.add('copy-btn--copied')
+                    setTimeout(() => { btn.textContent = 'Copy'; btn.classList.remove('copy-btn--copied') }, 2000)
+                })
+            })
+        })
+    </script>
 
 </body>
 

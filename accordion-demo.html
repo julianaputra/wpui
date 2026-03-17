@@ -5,85 +5,90 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Accordion — WPUI Demo</title>
+    <title>Accordion — WPUI</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@700;800&family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="demo.css">
     <link rel="stylesheet" href="components/accordion/accordion.css">
 
     <style>
-        .demo-accordion-wrap {
-            max-width: 560px;
-            width: 100%;
-        }
+        .accordion-wrap { max-width: 560px; width: 100%; }
     </style>
 
 </head>
 
 <body>
 
+    <!-- ─── Header ─── -->
     <header class="demo-header">
         <a href="index.html" class="demo-logo">WPUI</a>
+        <a href="index.html" class="demo-back">← Components</a>
     </header>
 
-    <div class="demo-body">
+    <main class="demo-main">
 
-        <a href="index.html" class="demo-back">← Components</a>
+        <!-- ─── Hero ─── -->
+        <div class="demo-hero">
+            <p class="demo-hero__label">component · 03</p>
+            <h1 class="demo-hero__title">Accordion</h1>
+            <p class="demo-hero__desc">open / close · single mode · multiple mode · smooth height animation · keyboard navigation · accessible</p>
+        </div>
 
-        <h1>Accordion</h1>
-        <p style="margin-bottom: 40px;">open / close · single mode · multiple mode · keyboard navigation · accessible</p>
-
-        <!-- 01 Single mode (default) -->
+        <!-- ─── 01 Single mode ─── -->
         <div class="demo-section">
-            <h2>Single Mode</h2>
-            <div class="demo-row">
-                <div class="demo-accordion-wrap">
+            <p class="demo-section__label">Single Mode (default)</p>
+            <div class="demo-stage">
+                <div class="accordion-wrap">
 
                     <div data-wpui="accordion" class="wpui-accordion">
 
                         <div class="wpui-accordion__item">
                             <button class="wpui-accordion__trigger" data-trigger>
-                                Apa itu WPUI?
+                                What is WPUI?
                                 <span class="wpui-accordion__icon" aria-hidden="true"></span>
                             </button>
                             <div class="wpui-accordion__panel" data-panel>
                                 <div class="wpui-accordion__body">
-                                    <p>WPUI adalah kumpulan UI component untuk WordPress theme. Copy-paste, tanpa framework, tanpa jQuery.</p>
+                                    <p>WPUI is a collection of UI components for WordPress themes. Copy-paste, no framework, no jQuery.</p>
                                 </div>
                             </div>
                         </div>
 
                         <div class="wpui-accordion__item">
                             <button class="wpui-accordion__trigger" data-trigger>
-                                Apakah perlu install?
+                                Do I need to install anything?
                                 <span class="wpui-accordion__icon" aria-hidden="true"></span>
                             </button>
                             <div class="wpui-accordion__panel" data-panel>
                                 <div class="wpui-accordion__body">
-                                    <p>Tidak. Cukup copy file HTML, CSS, dan JS ke project. Tidak ada npm, tidak ada build step.</p>
+                                    <p>No. Just copy the HTML, CSS, and JS files into your project. No npm, no build step.</p>
                                 </div>
                             </div>
                         </div>
 
                         <div class="wpui-accordion__item">
                             <button class="wpui-accordion__trigger" data-trigger>
-                                Apakah accessible?
+                                Is it accessible?
                                 <span class="wpui-accordion__icon" aria-hidden="true"></span>
                             </button>
                             <div class="wpui-accordion__panel" data-panel>
                                 <div class="wpui-accordion__body">
-                                    <p>Ya. Setiap component menggunakan ARIA attributes yang benar dan mendukung keyboard navigation penuh.</p>
+                                    <p>Yes. Every component uses the correct ARIA attributes and supports full keyboard navigation.</p>
                                 </div>
                             </div>
                         </div>
 
                         <div class="wpui-accordion__item">
                             <button class="wpui-accordion__trigger" data-trigger>
-                                Berapa ukuran file-nya?
+                                How large are the files?
                                 <span class="wpui-accordion__icon" aria-hidden="true"></span>
                             </button>
                             <div class="wpui-accordion__panel" data-panel>
                                 <div class="wpui-accordion__body">
-                                    <p>Target per component kurang dari 1kb JS. Total optional bundle kurang dari 6kb. Zero dependency.</p>
+                                    <p>Target is under 1kb JS per component. Total optional bundle under 6kb. Zero dependencies.</p>
                                 </div>
                             </div>
                         </div>
@@ -94,46 +99,46 @@
             </div>
         </div>
 
-        <!-- 02 Multiple mode -->
+        <!-- ─── 02 Multiple mode ─── -->
         <div class="demo-section">
-            <h2>Multiple Mode</h2>
-            <div class="demo-row">
-                <div class="demo-accordion-wrap">
+            <p class="demo-section__label">Multiple Mode</p>
+            <div class="demo-stage">
+                <div class="accordion-wrap">
 
                     <div data-wpui="accordion" data-mode="multiple" class="wpui-accordion">
 
                         <div class="wpui-accordion__item">
                             <button class="wpui-accordion__trigger" data-trigger>
-                                Pengiriman
+                                Shipping
                                 <span class="wpui-accordion__icon" aria-hidden="true"></span>
                             </button>
                             <div class="wpui-accordion__panel" data-panel>
                                 <div class="wpui-accordion__body">
-                                    <p>Pengiriman ke seluruh Indonesia. Estimasi 2–5 hari kerja tergantung lokasi.</p>
+                                    <p>Nationwide shipping. Estimated 2–5 business days depending on location.</p>
                                 </div>
                             </div>
                         </div>
 
                         <div class="wpui-accordion__item">
                             <button class="wpui-accordion__trigger" data-trigger>
-                                Pembayaran
+                                Payment
                                 <span class="wpui-accordion__icon" aria-hidden="true"></span>
                             </button>
                             <div class="wpui-accordion__panel" data-panel>
                                 <div class="wpui-accordion__body">
-                                    <p>Tersedia transfer bank, kartu kredit, dan dompet digital. Semua transaksi dienkripsi.</p>
+                                    <p>Bank transfer, credit card, and digital wallets available. All transactions are encrypted.</p>
                                 </div>
                             </div>
                         </div>
 
                         <div class="wpui-accordion__item">
                             <button class="wpui-accordion__trigger" data-trigger>
-                                Pengembalian
+                                Returns
                                 <span class="wpui-accordion__icon" aria-hidden="true"></span>
                             </button>
                             <div class="wpui-accordion__panel" data-panel>
                                 <div class="wpui-accordion__body">
-                                    <p>Pengembalian barang bisa dilakukan dalam 14 hari. Hubungi customer service untuk proses lebih lanjut.</p>
+                                    <p>Returns accepted within 14 days. Contact customer service to begin the process.</p>
                                 </div>
                             </div>
                         </div>
@@ -144,7 +149,204 @@
             </div>
         </div>
 
-    </div>
+        <!-- ─── Get the code ─── -->
+        <section class="code-section">
+            <h2 class="code-section__title">Get the code</h2>
+
+            <div class="code-tabs">
+                <div class="code-tabs__bar">
+                    <button class="code-tab code-tab--active" data-tab="html">HTML</button>
+                    <button class="code-tab" data-tab="css">CSS</button>
+                    <button class="code-tab" data-tab="js">JS</button>
+                </div>
+
+                <div class="code-panel code-panel--active" data-panel="html">
+                    <button class="copy-btn">Copy</button>
+                    <pre><code>&lt;div data-wpui="accordion" class="wpui-accordion"&gt;
+    &lt;!-- data-mode="multiple" to allow multiple open panels --&gt;
+
+    &lt;div class="wpui-accordion__item"&gt;
+        &lt;button class="wpui-accordion__trigger" data-trigger&gt;
+            Question one
+            &lt;span class="wpui-accordion__icon" aria-hidden="true"&gt;&lt;/span&gt;
+        &lt;/button&gt;
+        &lt;div class="wpui-accordion__panel" data-panel&gt;
+            &lt;div class="wpui-accordion__body"&gt;
+                &lt;p&gt;Answer content goes here.&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class="wpui-accordion__item"&gt;
+        &lt;button class="wpui-accordion__trigger" data-trigger&gt;
+            Question two
+            &lt;span class="wpui-accordion__icon" aria-hidden="true"&gt;&lt;/span&gt;
+        &lt;/button&gt;
+        &lt;div class="wpui-accordion__panel" data-panel&gt;
+            &lt;div class="wpui-accordion__body"&gt;
+                &lt;p&gt;Answer content goes here.&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;/div&gt;</code></pre>
+                </div>
+
+                <div class="code-panel" data-panel="css">
+                    <button class="copy-btn">Copy</button>
+                    <pre><code>.wpui-accordion {
+    border: 1px solid #D9D6CE;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.wpui-accordion__item {
+    border-bottom: 1px solid #D9D6CE;
+}
+
+.wpui-accordion__item:last-child {
+    border-bottom: none;
+}
+
+.wpui-accordion__trigger {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    width: 100%;
+    padding: 16px 20px;
+    border: none;
+    background: #fff;
+    font-size: 15px;
+    font-weight: 500;
+    text-align: left;
+    color: #18181B;
+    cursor: pointer;
+    transition: background .1s;
+}
+
+.wpui-accordion__trigger:hover { background: #F7F6F2; }
+
+.wpui-accordion__trigger:focus-visible {
+    outline: 2px solid #1A56DB;
+    outline-offset: -2px;
+}
+
+.wpui-accordion__icon {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid currentColor;
+    flex-shrink: 0;
+    transition: transform .25s ease;
+}
+
+.wpui-accordion__item--open .wpui-accordion__icon {
+    transform: rotate(180deg);
+}
+
+/* Smooth height animation via CSS grid trick */
+.wpui-accordion__panel {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows .25s ease;
+}
+
+.wpui-accordion__item--open .wpui-accordion__panel {
+    grid-template-rows: 1fr;
+}
+
+.wpui-accordion__body {
+    overflow: hidden;
+    padding: 0 20px;
+    font-size: 14px;
+    color: #52525B;
+    line-height: 1.7;
+}
+
+.wpui-accordion__item--open .wpui-accordion__body {
+    padding-bottom: 20px;
+}</code></pre>
+                </div>
+
+                <div class="code-panel" data-panel="js">
+                    <button class="copy-btn">Copy</button>
+                    <pre><code>(function () {
+
+  const initAccordion = (root) =&gt; {
+
+    const items = Array.from(root.querySelectorAll('.wpui-accordion__item'))
+    const mode = root.dataset.mode || 'single' // 'single' | 'multiple'
+
+    const getParts = (item) =&gt; ({
+      trigger: item.querySelector('[data-trigger]'),
+      panel: item.querySelector('[data-panel]'),
+    })
+
+    const isOpen = (item) =&gt; item.classList.contains('wpui-accordion__item--open')
+
+    const openItem = (item) =&gt; {
+      const { trigger, panel } = getParts(item)
+      item.classList.add('wpui-accordion__item--open')
+      trigger.setAttribute('aria-expanded', 'true')
+      panel.removeAttribute('aria-hidden')
+    }
+
+    const closeItem = (item) =&gt; {
+      const { trigger, panel } = getParts(item)
+      item.classList.remove('wpui-accordion__item--open')
+      trigger.setAttribute('aria-expanded', 'false')
+      panel.setAttribute('aria-hidden', 'true')
+    }
+
+    const toggle = (item) =&gt; {
+      if (isOpen(item)) {
+        closeItem(item)
+      } else {
+        if (mode === 'single') items.forEach(closeItem)
+        openItem(item)
+      }
+    }
+
+    items.forEach((item) =&gt; {
+      const { trigger, panel } = getParts(item)
+      trigger.setAttribute('aria-expanded', 'false')
+      panel.setAttribute('aria-hidden', 'true')
+      trigger.addEventListener('click', () =&gt; toggle(item))
+    })
+
+    const triggers = items.map((item) =&gt; getParts(item).trigger)
+
+    root.addEventListener('keydown', (e) =&gt; {
+      const idx = triggers.indexOf(document.activeElement)
+      if (idx === -1) return
+
+      switch (e.key) {
+        case 'ArrowDown':
+          e.preventDefault()
+          triggers[(idx + 1) % triggers.length].focus()
+          break
+        case 'ArrowUp':
+          e.preventDefault()
+          triggers[(idx - 1 + triggers.length) % triggers.length].focus()
+          break
+        case 'Home': e.preventDefault(); triggers[0].focus(); break
+        case 'End':  e.preventDefault(); triggers[triggers.length - 1].focus(); break
+      }
+    })
+
+  }
+
+  document.querySelectorAll('[data-wpui="accordion"]').forEach(initAccordion)
+
+})()</code></pre>
+                </div>
+            </div>
+        </section>
+
+    </main>
 
     <footer class="demo-footer">
         <span>WPUI / Accordion</span>
@@ -152,6 +354,28 @@
     </footer>
 
     <script src="components/accordion/accordion.js"></script>
+    <script>
+        document.querySelectorAll('.code-tab').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const target = btn.dataset.tab
+                btn.closest('.code-tabs').querySelectorAll('.code-tab').forEach(t => t.classList.remove('code-tab--active'))
+                btn.closest('.code-tabs').querySelectorAll('.code-panel').forEach(p => p.classList.remove('code-panel--active'))
+                btn.classList.add('code-tab--active')
+                btn.closest('.code-tabs').querySelector(`[data-panel="${target}"]`).classList.add('code-panel--active')
+            })
+        })
+
+        document.querySelectorAll('.copy-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const code = btn.closest('.code-panel').querySelector('code').textContent
+                navigator.clipboard.writeText(code).then(() => {
+                    btn.textContent = 'Copied!'
+                    btn.classList.add('copy-btn--copied')
+                    setTimeout(() => { btn.textContent = 'Copy'; btn.classList.remove('copy-btn--copied') }, 2000)
+                })
+            })
+        })
+    </script>
 
 </body>
 

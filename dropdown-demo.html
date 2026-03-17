@@ -5,7 +5,11 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dropdown — WPUI Demo</title>
+    <title>Dropdown — WPUI</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@700;800&family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="demo.css">
     <link rel="stylesheet" href="components/dropdown/dropdown.css">
@@ -14,21 +18,25 @@
 
 <body>
 
+    <!-- ─── Header ─── -->
     <header class="demo-header">
         <a href="index.html" class="demo-logo">WPUI</a>
+        <a href="index.html" class="demo-back">← Components</a>
     </header>
 
-    <div class="demo-body">
+    <main class="demo-main">
 
-        <a href="index.html" class="demo-back">← Components</a>
+        <!-- ─── Hero ─── -->
+        <div class="demo-hero">
+            <p class="demo-hero__label">component · 02</p>
+            <h1 class="demo-hero__title">Dropdown</h1>
+            <p class="demo-hero__desc">toggle · close outside · submenu · keyboard navigation · accessible</p>
+        </div>
 
-        <h1>Dropdown</h1>
-        <p style="margin-bottom: 40px;">toggle · close outside · keyboard navigation · submenu · accessible</p>
-
-        <!-- 01 Basic -->
+        <!-- ─── 01 Basic ─── -->
         <div class="demo-section">
-            <h2>Basic</h2>
-            <div class="demo-row">
+            <p class="demo-section__label">Basic</p>
+            <div class="demo-stage">
 
                 <div data-wpui="dropdown" class="wpui-dropdown">
                     <button data-trigger class="wpui-dropdown__trigger">
@@ -46,10 +54,10 @@
             </div>
         </div>
 
-        <!-- 02 Submenu -->
+        <!-- ─── 02 Submenu ─── -->
         <div class="demo-section">
-            <h2>Submenu</h2>
-            <div class="demo-row">
+            <p class="demo-section__label">With Submenu</p>
+            <div class="demo-stage">
 
                 <div data-wpui="dropdown" class="wpui-dropdown">
                     <button data-trigger class="wpui-dropdown__trigger" aria-haspopup="true" aria-expanded="false">
@@ -57,12 +65,8 @@
                         <span class="wpui-dropdown__arrow" aria-hidden="true"></span>
                     </button>
                     <ul class="wpui-dropdown__menu" data-menu role="menu" aria-hidden="true">
-                        <li role="none">
-                            <button class="wpui-dropdown__item" role="menuitem">New</button>
-                        </li>
-                        <li role="none">
-                            <button class="wpui-dropdown__item" role="menuitem">Open</button>
-                        </li>
+                        <li role="none"><button class="wpui-dropdown__item" role="menuitem">New</button></li>
+                        <li role="none"><button class="wpui-dropdown__item" role="menuitem">Open</button></li>
                         <li role="none" class="wpui-dropdown__item-wrap--has-sub">
                             <button class="wpui-dropdown__item wpui-dropdown__item--has-sub" role="menuitem"
                                 aria-haspopup="true" aria-expanded="false">
@@ -75,31 +79,18 @@
                                 <li role="none"><button class="wpui-dropdown__item" role="menuitem">SVG</button></li>
                             </ul>
                         </li>
-                        <li role="none" class="wpui-dropdown__item-wrap--has-sub">
-                            <button class="wpui-dropdown__item wpui-dropdown__item--has-sub" role="menuitem"
-                                aria-haspopup="true" aria-expanded="false">
-                                Share
-                                <span class="wpui-dropdown__sub-arrow" aria-hidden="true"></span>
-                            </button>
-                            <ul class="wpui-dropdown__submenu" role="menu" aria-hidden="true">
-                                <li role="none"><button class="wpui-dropdown__item" role="menuitem">Copy link</button></li>
-                                <li role="none"><button class="wpui-dropdown__item" role="menuitem">Email</button></li>
-                            </ul>
-                        </li>
                         <li class="wpui-dropdown__divider" role="separator"></li>
-                        <li role="none">
-                            <button class="wpui-dropdown__item wpui-dropdown__item--danger" role="menuitem">Delete</button>
-                        </li>
+                        <li role="none"><button class="wpui-dropdown__item wpui-dropdown__item--danger" role="menuitem">Delete</button></li>
                     </ul>
                 </div>
 
             </div>
         </div>
 
-        <!-- 03 Navigation Links -->
+        <!-- ─── 03 Navigation Links ─── -->
         <div class="demo-section">
-            <h2>Navigation Links</h2>
-            <div class="demo-row">
+            <p class="demo-section__label">Navigation Links</p>
+            <div class="demo-stage">
 
                 <div data-wpui="dropdown" class="wpui-dropdown">
                     <button data-trigger class="wpui-dropdown__trigger">
@@ -129,10 +120,10 @@
             </div>
         </div>
 
-        <!-- 04 User Menu -->
+        <!-- ─── 04 User Menu ─── -->
         <div class="demo-section">
-            <h2>User Menu</h2>
-            <div class="demo-row">
+            <p class="demo-section__label">User Menu</p>
+            <div class="demo-stage">
 
                 <div data-wpui="dropdown" class="wpui-dropdown">
                     <button data-trigger class="wpui-dropdown__trigger">
@@ -150,7 +141,328 @@
             </div>
         </div>
 
-    </div>
+        <!-- ─── Get the code ─── -->
+        <section class="code-section">
+            <h2 class="code-section__title">Get the code</h2>
+
+            <div class="code-tabs">
+                <div class="code-tabs__bar">
+                    <button class="code-tab code-tab--active" data-tab="html">HTML</button>
+                    <button class="code-tab" data-tab="css">CSS</button>
+                    <button class="code-tab" data-tab="js">JS</button>
+                </div>
+
+                <div class="code-panel code-panel--active" data-panel="html">
+                    <button class="copy-btn">Copy</button>
+                    <pre><code>&lt;div data-wpui="dropdown" class="wpui-dropdown"&gt;
+    &lt;button data-trigger class="wpui-dropdown__trigger"
+        aria-haspopup="true" aria-expanded="false"&gt;
+        Options
+        &lt;span class="wpui-dropdown__arrow" aria-hidden="true"&gt;&lt;/span&gt;
+    &lt;/button&gt;
+
+    &lt;ul class="wpui-dropdown__menu" data-menu role="menu" aria-hidden="true"&gt;
+        &lt;li role="none"&gt;
+            &lt;button class="wpui-dropdown__item" role="menuitem"&gt;Edit&lt;/button&gt;
+        &lt;/li&gt;
+        &lt;li role="none"&gt;
+            &lt;button class="wpui-dropdown__item" role="menuitem"&gt;Duplicate&lt;/button&gt;
+        &lt;/li&gt;
+        &lt;li class="wpui-dropdown__divider" role="separator"&gt;&lt;/li&gt;
+        &lt;li role="none"&gt;
+            &lt;button class="wpui-dropdown__item wpui-dropdown__item--danger"
+                role="menuitem"&gt;Delete&lt;/button&gt;
+        &lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;!-- Submenu item --&gt;
+&lt;li role="none" class="wpui-dropdown__item-wrap--has-sub"&gt;
+    &lt;button class="wpui-dropdown__item wpui-dropdown__item--has-sub"
+        role="menuitem" aria-haspopup="true" aria-expanded="false"&gt;
+        Export as
+        &lt;span class="wpui-dropdown__sub-arrow" aria-hidden="true"&gt;&lt;/span&gt;
+    &lt;/button&gt;
+    &lt;ul class="wpui-dropdown__submenu" role="menu" aria-hidden="true"&gt;
+        &lt;li role="none"&gt;&lt;button class="wpui-dropdown__item" role="menuitem"&gt;PDF&lt;/button&gt;&lt;/li&gt;
+        &lt;li role="none"&gt;&lt;button class="wpui-dropdown__item" role="menuitem"&gt;PNG&lt;/button&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/li&gt;</code></pre>
+                </div>
+
+                <div class="code-panel" data-panel="css">
+                    <button class="copy-btn">Copy</button>
+                    <pre><code>.wpui-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.wpui-dropdown__trigger {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 9px 14px;
+    border: 1px solid #D9D6CE;
+    border-radius: 6px;
+    background: #fff;
+    font-size: 14px;
+    cursor: pointer;
+    color: #18181B;
+    transition: border-color .15s, background .15s;
+}
+
+.wpui-dropdown__trigger:hover {
+    border-color: #A1A1AA;
+    background: #F7F6F2;
+}
+
+.wpui-dropdown__trigger:focus-visible {
+    outline: 2px solid #1A56DB;
+    outline-offset: 2px;
+}
+
+.wpui-dropdown__arrow {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid currentColor;
+    transition: transform .2s ease;
+    flex-shrink: 0;
+}
+
+.wpui-dropdown--open .wpui-dropdown__arrow {
+    transform: rotate(180deg);
+}
+
+.wpui-dropdown__menu {
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 0;
+    z-index: 200;
+    min-width: 180px;
+    background: #fff;
+    border: 1px solid #D9D6CE;
+    border-radius: 8px;
+    padding: 4px;
+    list-style: none;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, .08);
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-6px);
+    transition: opacity .15s ease, visibility .15s ease, transform .15s ease;
+}
+
+.wpui-dropdown--open .wpui-dropdown__menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.wpui-dropdown__item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    background: none;
+    font-size: 14px;
+    text-align: left;
+    color: #18181B;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background .1s;
+}
+
+.wpui-dropdown__item:hover,
+.wpui-dropdown__item:focus {
+    background: #F7F6F2;
+    outline: none;
+}
+
+.wpui-dropdown__item--danger { color: #DC2626; }
+.wpui-dropdown__item--danger:hover,
+.wpui-dropdown__item--danger:focus { background: #FEF2F2; }
+
+.wpui-dropdown__item--has-sub { justify-content: space-between; }
+
+.wpui-dropdown__sub-arrow {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-top: 4px solid transparent;
+    border-bottom: 4px solid transparent;
+    border-left: 5px solid currentColor;
+    flex-shrink: 0;
+    transition: transform .15s ease;
+}
+
+.wpui-dropdown__item-wrap--has-sub { position: relative; }
+
+.wpui-dropdown__submenu {
+    position: absolute;
+    top: -4px;
+    left: calc(100% + 4px);
+    z-index: 201;
+    min-width: 180px;
+    background: #fff;
+    border: 1px solid #D9D6CE;
+    border-radius: 8px;
+    padding: 4px;
+    list-style: none;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, .08);
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-6px);
+    transition: opacity .15s ease, visibility .15s ease, transform .15s ease;
+}
+
+.wpui-dropdown__item-wrap--sub-open &gt; .wpui-dropdown__submenu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+}
+
+.wpui-dropdown__divider {
+    height: 1px;
+    background: #D9D6CE;
+    margin: 4px 0;
+}</code></pre>
+                </div>
+
+                <div class="code-panel" data-panel="js">
+                    <button class="copy-btn">Copy</button>
+                    <pre><code>(function () {
+
+  const initDropdown = (root) =&gt; {
+
+    const trigger = root.querySelector('[data-trigger]')
+    const menu = root.querySelector('[data-menu]')
+    if (!trigger || !menu) return
+
+    const getItems = (container) =&gt;
+      Array.from(container.querySelectorAll(':scope &gt; li &gt; [role="menuitem"]:not([disabled])'))
+
+    const isOpen = () =&gt; root.classList.contains('wpui-dropdown--open')
+
+    const subWrappers = Array.from(menu.querySelectorAll('.wpui-dropdown__item-wrap--has-sub'))
+    let hoverTimer = null
+
+    const openSubmenu = (wrapper) =&gt; {
+      closeAllSubmenus()
+      const subTrigger = wrapper.querySelector(':scope &gt; [role="menuitem"]')
+      const submenu = wrapper.querySelector(':scope &gt; .wpui-dropdown__submenu')
+      wrapper.classList.add('wpui-dropdown__item-wrap--sub-open')
+      subTrigger?.setAttribute('aria-expanded', 'true')
+      submenu?.removeAttribute('aria-hidden')
+    }
+
+    const closeSubmenu = (wrapper) =&gt; {
+      const subTrigger = wrapper.querySelector(':scope &gt; [role="menuitem"]')
+      const submenu = wrapper.querySelector(':scope &gt; .wpui-dropdown__submenu')
+      wrapper.classList.remove('wpui-dropdown__item-wrap--sub-open')
+      subTrigger?.setAttribute('aria-expanded', 'false')
+      submenu?.setAttribute('aria-hidden', 'true')
+    }
+
+    const closeAllSubmenus = () =&gt; subWrappers.forEach(closeSubmenu)
+
+    subWrappers.forEach((wrapper) =&gt; {
+      const subTrigger = wrapper.querySelector(':scope &gt; [role="menuitem"]')
+
+      wrapper.addEventListener('mouseenter', () =&gt; { clearTimeout(hoverTimer); openSubmenu(wrapper) })
+      wrapper.addEventListener('mouseleave', () =&gt; { hoverTimer = setTimeout(() =&gt; closeSubmenu(wrapper), 120) })
+
+      subTrigger?.addEventListener('click', (e) =&gt; {
+        e.stopPropagation()
+        wrapper.classList.contains('wpui-dropdown__item-wrap--sub-open')
+          ? closeSubmenu(wrapper)
+          : openSubmenu(wrapper)
+      })
+    })
+
+    const open = () =&gt; {
+      root.classList.add('wpui-dropdown--open')
+      trigger.setAttribute('aria-expanded', 'true')
+      menu.removeAttribute('aria-hidden')
+      setTimeout(() =&gt; getItems(menu)[0]?.focus(), 50)
+    }
+
+    const close = () =&gt; {
+      closeAllSubmenus()
+      root.classList.remove('wpui-dropdown--open')
+      trigger.setAttribute('aria-expanded', 'false')
+      menu.setAttribute('aria-hidden', 'true')
+    }
+
+    trigger.addEventListener('click', () =&gt; isOpen() ? close() : open())
+    document.addEventListener('click', (e) =&gt; { if (!root.contains(e.target) &amp;&amp; isOpen()) close() })
+
+    root.addEventListener('keydown', (e) =&gt; {
+      if (!isOpen()) {
+        if (e.key === 'ArrowDown' || e.key === ' ') { e.preventDefault(); open() }
+        return
+      }
+
+      const activeSubWrapper = subWrappers.find((w) =&gt;
+        w.classList.contains('wpui-dropdown__item-wrap--sub-open') &amp;&amp;
+        w.querySelector('.wpui-dropdown__submenu')?.contains(document.activeElement)
+      )
+
+      if (activeSubWrapper) {
+        const subItems = getItems(activeSubWrapper.querySelector('.wpui-dropdown__submenu'))
+        const subIdx = subItems.indexOf(document.activeElement)
+        const subTriggerEl = activeSubWrapper.querySelector(':scope &gt; [role="menuitem"]')
+
+        switch (e.key) {
+          case 'ArrowLeft': case 'Escape':
+            e.preventDefault(); closeSubmenu(activeSubWrapper); subTriggerEl?.focus(); break
+          case 'ArrowDown':
+            e.preventDefault(); subItems[(subIdx + 1) % subItems.length]?.focus(); break
+          case 'ArrowUp':
+            e.preventDefault(); subItems[(subIdx - 1 + subItems.length) % subItems.length]?.focus(); break
+          case 'Home': e.preventDefault(); subItems[0]?.focus(); break
+          case 'End':  e.preventDefault(); subItems[subItems.length - 1]?.focus(); break
+          case 'Tab':  close(); break
+        }
+        return
+      }
+
+      const items = getItems(menu)
+      const idx = items.indexOf(document.activeElement)
+
+      switch (e.key) {
+        case 'Escape':    e.preventDefault(); close(); trigger.focus(); break
+        case 'Tab':       close(); break
+        case 'ArrowDown': e.preventDefault(); items[(idx + 1) % items.length]?.focus(); break
+        case 'ArrowUp':   e.preventDefault(); items[(idx - 1 + items.length) % items.length]?.focus(); break
+        case 'Home':      e.preventDefault(); items[0]?.focus(); break
+        case 'End':       e.preventDefault(); items[items.length - 1]?.focus(); break
+        case 'ArrowRight': {
+          const wrapper = items[idx]?.closest('.wpui-dropdown__item-wrap--has-sub')
+          if (wrapper) {
+            e.preventDefault(); openSubmenu(wrapper)
+            setTimeout(() =&gt; getItems(wrapper.querySelector('.wpui-dropdown__submenu'))[0]?.focus(), 50)
+          }
+          break
+        }
+      }
+    })
+  }
+
+  document.querySelectorAll('[data-wpui="dropdown"]').forEach(initDropdown)
+
+})()</code></pre>
+                </div>
+            </div>
+        </section>
+
+    </main>
 
     <footer class="demo-footer">
         <span>WPUI / Dropdown</span>
@@ -158,6 +470,28 @@
     </footer>
 
     <script src="components/dropdown/dropdown.js"></script>
+    <script>
+        document.querySelectorAll('.code-tab').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const target = btn.dataset.tab
+                btn.closest('.code-tabs').querySelectorAll('.code-tab').forEach(t => t.classList.remove('code-tab--active'))
+                btn.closest('.code-tabs').querySelectorAll('.code-panel').forEach(p => p.classList.remove('code-panel--active'))
+                btn.classList.add('code-tab--active')
+                btn.closest('.code-tabs').querySelector(`[data-panel="${target}"]`).classList.add('code-panel--active')
+            })
+        })
+
+        document.querySelectorAll('.copy-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const code = btn.closest('.code-panel').querySelector('code').textContent
+                navigator.clipboard.writeText(code).then(() => {
+                    btn.textContent = 'Copied!'
+                    btn.classList.add('copy-btn--copied')
+                    setTimeout(() => { btn.textContent = 'Copy'; btn.classList.remove('copy-btn--copied') }, 2000)
+                })
+            })
+        })
+    </script>
 
 </body>
 

@@ -5,7 +5,11 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Offcanvas — WPUI Demo</title>
+    <title>Offcanvas — WPUI</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@700;800&family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="demo.css">
     <link rel="stylesheet" href="components/offcanvas/offcanvas.css">
@@ -14,21 +18,25 @@
 
 <body>
 
+    <!-- ─── Header ─── -->
     <header class="demo-header">
         <a href="index.html" class="demo-logo">WPUI</a>
+        <a href="index.html" class="demo-back">← Components</a>
     </header>
 
-    <div class="demo-body">
+    <main class="demo-main">
 
-        <a href="index.html" class="demo-back">← Components</a>
+        <!-- ─── Hero ─── -->
+        <div class="demo-hero">
+            <p class="demo-hero__label">component · 05</p>
+            <h1 class="demo-hero__title">Offcanvas</h1>
+            <p class="demo-hero__desc">slide in/out · 4 directions · ESC · backdrop · focus trap · focus return · external trigger · accessible</p>
+        </div>
 
-        <h1>Offcanvas</h1>
-        <p style="margin-bottom: 40px;">slide in/out · 4 arah · ESC · backdrop · focus trap · focus return · accessible</p>
-
-        <!-- 01 Right (default) -->
+        <!-- ─── 01 Right ─── -->
         <div class="demo-section">
-            <h2>Right</h2>
-            <div class="demo-row">
+            <p class="demo-section__label">Right (default)</p>
+            <div class="demo-stage">
 
                 <div data-wpui="offcanvas" data-side="right" class="wpui-offcanvas">
                     <button data-open class="wpui-btn">Open Right</button>
@@ -41,7 +49,7 @@
                             <button data-close class="wpui-offcanvas__close" aria-label="Close panel">&times;</button>
                         </div>
                         <div class="wpui-offcanvas__body">
-                            <p>Panel ini muncul dari sisi kanan. Cocok untuk cart, filter, atau detail konten.</p>
+                            <p>This panel slides in from the right. Great for cart, filters, or content detail.</p>
                         </div>
                     </div>
                 </div>
@@ -49,10 +57,10 @@
             </div>
         </div>
 
-        <!-- 02 Left -->
+        <!-- ─── 02 Left ─── -->
         <div class="demo-section">
-            <h2>Left</h2>
-            <div class="demo-row">
+            <p class="demo-section__label">Left</p>
+            <div class="demo-stage">
 
                 <div data-wpui="offcanvas" data-side="left" class="wpui-offcanvas">
                     <button data-open class="wpui-btn">Open Left</button>
@@ -65,7 +73,7 @@
                             <button data-close class="wpui-offcanvas__close" aria-label="Close panel">&times;</button>
                         </div>
                         <div class="wpui-offcanvas__body">
-                            <p>Panel ini muncul dari sisi kiri. Cocok untuk navigasi sidebar atau menu utama.</p>
+                            <p>This panel slides in from the left. Great for sidebar navigation or a main menu.</p>
                         </div>
                     </div>
                 </div>
@@ -73,10 +81,10 @@
             </div>
         </div>
 
-        <!-- 03 Top -->
+        <!-- ─── 03 Top ─── -->
         <div class="demo-section">
-            <h2>Top</h2>
-            <div class="demo-row">
+            <p class="demo-section__label">Top</p>
+            <div class="demo-stage">
 
                 <div data-wpui="offcanvas" data-side="top" class="wpui-offcanvas">
                     <button data-open class="wpui-btn">Open Top</button>
@@ -89,7 +97,7 @@
                             <button data-close class="wpui-offcanvas__close" aria-label="Close panel">&times;</button>
                         </div>
                         <div class="wpui-offcanvas__body">
-                            <p>Panel ini muncul dari atas. Cocok untuk search bar atau announcement.</p>
+                            <p>This panel drops down from the top. Great for a search bar or announcement banner.</p>
                         </div>
                     </div>
                 </div>
@@ -97,10 +105,10 @@
             </div>
         </div>
 
-        <!-- 04 Bottom -->
+        <!-- ─── 04 Bottom ─── -->
         <div class="demo-section">
-            <h2>Bottom</h2>
-            <div class="demo-row">
+            <p class="demo-section__label">Bottom</p>
+            <div class="demo-stage">
 
                 <div data-wpui="offcanvas" data-side="bottom" class="wpui-offcanvas">
                     <button data-open class="wpui-btn">Open Bottom</button>
@@ -113,7 +121,7 @@
                             <button data-close class="wpui-offcanvas__close" aria-label="Close panel">&times;</button>
                         </div>
                         <div class="wpui-offcanvas__body">
-                            <p>Panel ini muncul dari bawah. Cocok untuk action sheet atau konfirmasi di mobile.</p>
+                            <p>This panel slides up from the bottom. Great for mobile action sheets or confirmation dialogs.</p>
                         </div>
                     </div>
                 </div>
@@ -121,18 +129,277 @@
             </div>
         </div>
 
-        <!-- 05 External trigger -->
+        <!-- ─── 05 External trigger ─── -->
         <div class="demo-section">
-            <h2>External Trigger</h2>
-            <div class="demo-row">
+            <p class="demo-section__label">External Trigger</p>
+            <div class="demo-stage">
 
                 <button data-offcanvas="nav-panel" class="wpui-btn">Open Nav</button>
-                <button data-offcanvas="nav-panel" class="wpui-btn">Open from here too</button>
+                <button data-offcanvas="nav-panel" class="wpui-btn">Also opens it</button>
 
             </div>
         </div>
 
-    </div>
+        <!-- ─── Get the code ─── -->
+        <section class="code-section">
+            <h2 class="code-section__title">Get the code</h2>
+
+            <div class="code-tabs">
+                <div class="code-tabs__bar">
+                    <button class="code-tab code-tab--active" data-tab="html">HTML</button>
+                    <button class="code-tab" data-tab="css">CSS</button>
+                    <button class="code-tab" data-tab="js">JS</button>
+                </div>
+
+                <div class="code-panel code-panel--active" data-panel="html">
+                    <button class="copy-btn">Copy</button>
+                    <pre><code>&lt;div data-wpui="offcanvas" data-side="right" class="wpui-offcanvas"&gt;
+    &lt;!-- data-side: "right" | "left" | "top" | "bottom" --&gt;
+
+    &lt;button data-open class="wpui-btn"&gt;Open&lt;/button&gt;
+
+    &lt;div class="wpui-offcanvas__backdrop" data-backdrop&gt;&lt;/div&gt;
+
+    &lt;div class="wpui-offcanvas__panel" data-panel
+        role="dialog"
+        aria-modal="true"
+        aria-hidden="true"
+        aria-labelledby="panel-title"&gt;
+
+        &lt;div class="wpui-offcanvas__header"&gt;
+            &lt;h2 class="wpui-offcanvas__title" id="panel-title"&gt;Panel Title&lt;/h2&gt;
+            &lt;button data-close class="wpui-offcanvas__close" aria-label="Close panel"&gt;&amp;times;&lt;/button&gt;
+        &lt;/div&gt;
+
+        &lt;div class="wpui-offcanvas__body"&gt;
+            &lt;p&gt;Panel content goes here.&lt;/p&gt;
+        &lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- External trigger (optional) --&gt;
+&lt;button data-offcanvas="panel-id"&gt;Open from anywhere&lt;/button&gt;</code></pre>
+                </div>
+
+                <div class="code-panel" data-panel="css">
+                    <button class="copy-btn">Copy</button>
+                    <pre><code>.wpui-offcanvas__backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, .5);
+    z-index: 300;
+
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .25s ease, visibility .25s ease;
+}
+
+.wpui-offcanvas--open .wpui-offcanvas__backdrop {
+    opacity: 1;
+    visibility: visible;
+}
+
+.wpui-offcanvas__panel {
+    position: fixed;
+    z-index: 301;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    transition: transform .3s ease;
+}
+
+/* Right (default) */
+.wpui-offcanvas__panel {
+    top: 0; right: 0;
+    height: 100%;
+    width: 320px;
+    max-width: 90vw;
+    transform: translateX(100%);
+}
+
+.wpui-offcanvas--open .wpui-offcanvas__panel {
+    transform: translateX(0);
+}
+
+/* Left */
+.wpui-offcanvas[data-side="left"] .wpui-offcanvas__panel {
+    right: auto; left: 0;
+    transform: translateX(-100%);
+}
+
+.wpui-offcanvas[data-side="left"].wpui-offcanvas--open .wpui-offcanvas__panel {
+    transform: translateX(0);
+}
+
+/* Top */
+.wpui-offcanvas[data-side="top"] .wpui-offcanvas__panel {
+    top: 0; right: auto; left: 0;
+    width: 100%; height: auto;
+    max-width: 100%; max-height: 80vh;
+    transform: translateY(-100%);
+}
+
+.wpui-offcanvas[data-side="top"].wpui-offcanvas--open .wpui-offcanvas__panel {
+    transform: translateY(0);
+}
+
+/* Bottom */
+.wpui-offcanvas[data-side="bottom"] .wpui-offcanvas__panel {
+    top: auto; right: auto; bottom: 0; left: 0;
+    width: 100%; height: auto;
+    max-width: 100%; max-height: 80vh;
+    transform: translateY(100%);
+}
+
+.wpui-offcanvas[data-side="bottom"].wpui-offcanvas--open .wpui-offcanvas__panel {
+    transform: translateY(0);
+}
+
+.wpui-offcanvas__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    border-bottom: 1px solid #D9D6CE;
+    flex-shrink: 0;
+}
+
+.wpui-offcanvas__title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #18181B;
+}
+
+.wpui-offcanvas__close {
+    width: 32px; height: 32px;
+    border: none; background: none;
+    font-size: 20px; line-height: 1;
+    cursor: pointer; border-radius: 4px;
+    color: #71717A;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    transition: background .1s, color .1s;
+}
+
+.wpui-offcanvas__close:hover { background: #F7F6F2; color: #18181B; }
+
+.wpui-offcanvas__close:focus-visible {
+    outline: 2px solid #1A56DB;
+    outline-offset: 2px;
+}
+
+.wpui-offcanvas__body {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px;
+    font-size: 14px;
+    color: #52525B;
+    line-height: 1.7;
+}
+
+.wpui-btn {
+    padding: 9px 16px;
+    border: 1px solid #D9D6CE;
+    border-radius: 6px;
+    background: #fff;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.wpui-btn:focus-visible {
+    outline: 2px solid #1A56DB;
+    outline-offset: 2px;
+}</code></pre>
+                </div>
+
+                <div class="code-panel" data-panel="js">
+                    <button class="copy-btn">Copy</button>
+                    <pre><code>(function () {
+
+  const FOCUSABLE = [
+    'a[href]',
+    'button:not([disabled])',
+    'textarea', 'input', 'select',
+    '[tabindex]:not([tabindex="-1"])'
+  ].join(',')
+
+  const panels = {}
+
+  const initOffcanvas = (root) =&gt; {
+
+    const id = root.id
+    const openBtn = root.querySelector('[data-open]')
+    const closeBtn = root.querySelector('[data-close]')
+    const backdrop = root.querySelector('[data-backdrop]')
+    const panel = root.querySelector('[data-panel]')
+
+    let focusable = []
+    let first, last, opener
+
+    const updateFocusable = () =&gt; {
+      focusable = Array.from(panel.querySelectorAll(FOCUSABLE))
+      first = focusable[0]
+      last = focusable[focusable.length - 1]
+    }
+
+    const open = (trigger) =&gt; {
+      opener = trigger || openBtn || document.activeElement
+      root.classList.add('wpui-offcanvas--open')
+      panel.setAttribute('aria-hidden', 'false')
+      document.body.style.overflow = 'hidden'
+      updateFocusable()
+      setTimeout(() =&gt; first?.focus(), 50)
+    }
+
+    const close = () =&gt; {
+      root.classList.remove('wpui-offcanvas--open')
+      panel.setAttribute('aria-hidden', 'true')
+      document.body.style.overflow = ''
+      opener?.focus()
+      opener = null
+    }
+
+    openBtn?.addEventListener('click', () =&gt; open(openBtn))
+    closeBtn?.addEventListener('click', close)
+    backdrop?.addEventListener('click', close)
+
+    document.addEventListener('keydown', (e) =&gt; {
+      if (!root.classList.contains('wpui-offcanvas--open')) return
+
+      if (e.key === 'Escape') { close(); return }
+
+      if (e.key === 'Tab') {
+        updateFocusable()
+        if (focusable.length === 0) { e.preventDefault(); return }
+
+        if (e.shiftKey) {
+          if (document.activeElement === first) { e.preventDefault(); last.focus() }
+        } else {
+          if (document.activeElement === last) { e.preventDefault(); first.focus() }
+        }
+      }
+    })
+
+    if (id) panels[id] = { open, close }
+  }
+
+  document.querySelectorAll('[data-wpui="offcanvas"]').forEach(initOffcanvas)
+
+  // External trigger: &lt;button data-offcanvas="panel-id"&gt;Open&lt;/button&gt;
+  document.addEventListener('click', (e) =&gt; {
+    const trigger = e.target.closest('[data-offcanvas]')
+    if (!trigger) return
+    e.preventDefault()
+    panels[trigger.dataset.offcanvas]?.open(trigger)
+  })
+
+})()</code></pre>
+                </div>
+            </div>
+        </section>
+
+    </main>
 
     <!-- External trigger target -->
     <div id="nav-panel" data-wpui="offcanvas" data-side="left" class="wpui-offcanvas">
@@ -145,7 +412,7 @@
                 <button data-close class="wpui-offcanvas__close" aria-label="Close panel">&times;</button>
             </div>
             <div class="wpui-offcanvas__body">
-                <p>Dibuka dari external trigger menggunakan <code>data-offcanvas="nav-panel"</code>.</p>
+                <p>Opened via external trigger using <code>data-offcanvas="nav-panel"</code>.</p>
             </div>
         </div>
     </div>
@@ -156,6 +423,28 @@
     </footer>
 
     <script src="components/offcanvas/offcanvas.js"></script>
+    <script>
+        document.querySelectorAll('.code-tab').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const target = btn.dataset.tab
+                btn.closest('.code-tabs').querySelectorAll('.code-tab').forEach(t => t.classList.remove('code-tab--active'))
+                btn.closest('.code-tabs').querySelectorAll('.code-panel').forEach(p => p.classList.remove('code-panel--active'))
+                btn.classList.add('code-tab--active')
+                btn.closest('.code-tabs').querySelector(`[data-panel="${target}"]`).classList.add('code-panel--active')
+            })
+        })
+
+        document.querySelectorAll('.copy-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const code = btn.closest('.code-panel').querySelector('code').textContent
+                navigator.clipboard.writeText(code).then(() => {
+                    btn.textContent = 'Copied!'
+                    btn.classList.add('copy-btn--copied')
+                    setTimeout(() => { btn.textContent = 'Copy'; btn.classList.remove('copy-btn--copied') }, 2000)
+                })
+            })
+        })
+    </script>
 
 </body>
 

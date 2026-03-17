@@ -1,114 +1,258 @@
 /* demo.css — shared styles for WPUI demo pages
-   Bukan bagian dari component. Jangan copy file ini ke project. */
+   Not part of any component. Do not copy to your project. */
 
-*, *::before, *::after {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+/* ─── Reset ─── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* ─── Tokens ─── */
+:root {
+    --bg:         #F8F7F4;
+    --surface:    #FFFFFF;
+    --surface-2:  #F0EDE7;
+    --border:     #E2DDD6;
+    --text:       #1A1917;
+    --muted:      #6B6860;
+    --accent:     #B8720A;
+    --accent-dim: rgba(184, 114, 10, 0.08);
+    --stage-bg:   #EEEAE3;
 }
+
+html { scroll-behavior: smooth; }
 
 body {
-    font-family: sans-serif;
-    background: #F7F6F2;
-    color: #18181B;
-    min-height: 100vh;
-}
-
-/* ─── Typography ─── */
-
-h1 {
-    font-size: 28px;
-    font-weight: 700;
-    letter-spacing: -0.02em;
-    margin-bottom: 8px;
-}
-
-p {
-    font-size: 14px;
-    color: #52525B;
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--text);
     line-height: 1.6;
-}
-
-/* ─── Back link ─── */
-
-.demo-back {
-    display: inline-block;
-    font-size: 13px;
-    color: #71717A;
-    text-decoration: none;
-    margin-bottom: 24px;
-}
-
-.demo-back:hover {
-    color: #18181B;
-}
-
-/* ─── Demo layout ─── */
-
-.demo-body {
-    padding: 48px 40px;
-}
-
-.demo-section {
-    margin-bottom: 40px;
-}
-
-.demo-section h2 {
-    font-size: 11px;
-    font-family: monospace;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: #A1A1AA;
-    margin-bottom: 16px;
-}
-
-.demo-row {
-    display: flex;
-    align-items: flex-start;
-    gap: 16px;
-    flex-wrap: wrap;
+    -webkit-font-smoothing: antialiased;
+    padding-top: 56px;
 }
 
 /* ─── Header ─── */
 
 .demo-header {
-    padding: 16px 40px;
-    border-bottom: 1px solid #D9D6CE;
-    background: #fff;
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    height: 56px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 0 40px;
+    border-bottom: 1px solid var(--border);
+    background: rgba(248, 247, 244, 0.92);
+    backdrop-filter: blur(14px);
 }
 
 .demo-logo {
-    font-family: monospace;
+    font-family: 'DM Mono', monospace;
     font-size: 14px;
-    font-weight: 600;
-    letter-spacing: -0.01em;
-    color: #18181B;
+    font-weight: 500;
+    color: var(--text);
     text-decoration: none;
+    letter-spacing: -0.01em;
 }
+
+.demo-back {
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color .15s;
+}
+
+.demo-back:hover { color: var(--text); }
+
+/* ─── Main layout ─── */
+
+.demo-main {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 56px 40px 80px;
+}
+
+/* ─── Hero ─── */
+
+.demo-hero {
+    padding: 48px 0 40px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 48px;
+}
+
+.demo-hero__label {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    margin-bottom: 12px;
+}
+
+.demo-hero__title {
+    font-family: 'Manrope', sans-serif;
+    font-size: 40px;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    color: var(--text);
+    margin-bottom: 10px;
+}
+
+.demo-hero__desc {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.7;
+}
+
+/* ─── Demo sections ─── */
+
+.demo-section {
+    margin-bottom: 40px;
+}
+
+.demo-section__label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+    margin-bottom: 12px;
+}
+
+/* ─── Stage (where the live component renders) ─── */
+
+.demo-stage {
+    background: var(--stage-bg);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 40px 32px;
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.demo-stage--centered {
+    justify-content: center;
+}
+
+.demo-stage--padded {
+    padding: 48px 32px;
+}
+
+/* ─── Code section ─── */
+
+.code-section {
+    margin-top: 64px;
+    border-top: 1px solid var(--border);
+    padding-top: 48px;
+}
+
+.code-section__title {
+    font-family: 'Manrope', sans-serif;
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    margin-bottom: 24px;
+}
+
+/* ─── Code tabs ─── */
+
+.code-tabs {
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.code-tabs__bar {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    padding: 8px 10px;
+    border-bottom: 1px solid var(--border);
+    background: var(--surface-2);
+}
+
+.code-tab {
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    padding: 5px 14px;
+    border: none;
+    border-radius: 5px;
+    background: none;
+    color: var(--muted);
+    cursor: pointer;
+    transition: background .1s, color .1s;
+}
+
+.code-tab:hover { color: var(--text); }
+
+.code-tab--active {
+    background: var(--surface);
+    color: var(--text);
+    box-shadow: 0 1px 3px rgba(0,0,0,.06);
+}
+
+/* ─── Code panel ─── */
+
+.code-panel { display: none; position: relative; }
+.code-panel--active { display: block; }
+
+.code-panel pre {
+    background: var(--surface);
+    padding: 28px 32px;
+    overflow-x: auto;
+    margin: 0;
+}
+
+.code-panel code {
+    font-family: 'DM Mono', monospace;
+    font-size: 12.5px;
+    line-height: 1.85;
+    color: #52504A;
+    white-space: pre;
+}
+
+/* ─── Copy button ─── */
+
+.copy-btn {
+    position: absolute;
+    top: 14px;
+    right: 16px;
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    padding: 5px 12px;
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    background: var(--surface-2);
+    color: var(--muted);
+    cursor: pointer;
+    transition: color .15s, border-color .15s, background .15s;
+}
+
+.copy-btn:hover { color: var(--text); border-color: var(--muted); background: var(--surface); }
+.copy-btn--copied { color: #2A6E2A !important; border-color: #2A6E2A !important; }
 
 /* ─── Footer ─── */
 
 .demo-footer {
-    border-top: 1px solid #D9D6CE;
-    padding: 16px 40px;
-    background: #fff;
-    font-size: 11px;
-    font-family: monospace;
-    color: #A1A1AA;
+    border-top: 1px solid var(--border);
+    padding: 20px 40px;
     display: flex;
+    align-items: center;
     justify-content: space-between;
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: #C0BAB2;
 }
 
 /* ─── Responsive ─── */
 
-@media (max-width: 480px) {
-    .demo-body,
-    .demo-header,
-    .demo-footer {
-        padding-left: 20px;
-        padding-right: 20px;
-    }
+@media (max-width: 600px) {
+    .demo-header { padding: 0 20px; }
+    .demo-main   { padding: 40px 20px 60px; }
+    .demo-footer { padding: 16px 20px; flex-direction: column; gap: 6px; }
+    .demo-stage  { padding: 28px 20px; }
+    .code-panel pre { padding: 20px; }
+    .demo-hero__title { font-size: 30px; }
 }
