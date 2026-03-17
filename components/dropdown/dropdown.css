@@ -29,7 +29,7 @@
     outline-offset: 2px;
 }
 
-/* ─── Arrow icon ─── */
+/* ─── Arrow (down) ─── */
 
 .wpui-dropdown__arrow {
     display: inline-block;
@@ -105,6 +105,62 @@
 .wpui-dropdown__item--danger:hover,
 .wpui-dropdown__item--danger:focus {
     background: #FEF2F2;
+}
+
+/* ─── Submenu trigger ─── */
+
+.wpui-dropdown__item--has-sub {
+    justify-content: space-between;
+}
+
+/* ─── Sub arrow (right) ─── */
+
+.wpui-dropdown__sub-arrow {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-top: 4px solid transparent;
+    border-bottom: 4px solid transparent;
+    border-left: 5px solid currentColor;
+    flex-shrink: 0;
+    transition: transform .15s ease;
+}
+
+.wpui-dropdown__item-wrap--sub-open > .wpui-dropdown__item--has-sub .wpui-dropdown__sub-arrow {
+    transform: rotate(90deg);
+}
+
+/* ─── Submenu wrapper ─── */
+
+.wpui-dropdown__item-wrap--has-sub {
+    position: relative;
+}
+
+/* ─── Submenu ─── */
+
+.wpui-dropdown__submenu {
+    position: absolute;
+    top: -4px;
+    left: calc(100% + 4px);
+    z-index: 201;
+    min-width: 180px;
+    background: #fff;
+    border: 1px solid #D9D6CE;
+    border-radius: 8px;
+    padding: 4px;
+    list-style: none;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, .08);
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-6px);
+    transition: opacity .15s ease, visibility .15s ease, transform .15s ease;
+}
+
+.wpui-dropdown__item-wrap--sub-open > .wpui-dropdown__submenu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
 }
 
 /* ─── Divider ─── */

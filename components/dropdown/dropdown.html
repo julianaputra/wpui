@@ -10,6 +10,27 @@
         <li role="none">
             <button class="wpui-dropdown__item" role="menuitem">Edit</button>
         </li>
+
+        <!-- Item dengan submenu -->
+        <li role="none" class="wpui-dropdown__item-wrap--has-sub">
+            <button class="wpui-dropdown__item wpui-dropdown__item--has-sub" role="menuitem"
+                aria-haspopup="true" aria-expanded="false">
+                Share
+                <span class="wpui-dropdown__sub-arrow" aria-hidden="true"></span>
+            </button>
+            <ul class="wpui-dropdown__submenu" role="menu" aria-hidden="true">
+                <li role="none">
+                    <button class="wpui-dropdown__item" role="menuitem">Copy link</button>
+                </li>
+                <li role="none">
+                    <button class="wpui-dropdown__item" role="menuitem">Email</button>
+                </li>
+                <li role="none">
+                    <button class="wpui-dropdown__item" role="menuitem">SMS</button>
+                </li>
+            </ul>
+        </li>
+
         <li role="none">
             <button class="wpui-dropdown__item" role="menuitem">Duplicate</button>
         </li>
