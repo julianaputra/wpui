@@ -383,6 +383,86 @@
 
         /* ─── Components ─── */
 
+        /* ─── Code ownership callout ─── */
+
+        .ownership-callout {
+            border: 1px solid var(--border);
+            border-left: 4px solid var(--accent);
+            border-radius: 8px;
+            background: var(--surface);
+            padding: 40px 48px;
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .ownership-callout__left { min-width: 0; }
+
+        .ownership-callout__eyebrow {
+            font-family: 'DM Mono', monospace;
+            font-size: 11px;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            margin-bottom: 12px;
+        }
+
+        .ownership-callout__title {
+            font-family: 'Manrope', sans-serif;
+            font-size: 26px;
+            font-weight: 800;
+            color: var(--text);
+            line-height: 1.2;
+            margin-bottom: 12px;
+        }
+
+        .ownership-callout__desc {
+            font-size: 15px;
+            color: var(--muted);
+            line-height: 1.7;
+            max-width: 560px;
+        }
+
+        .ownership-callout__files {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            flex-shrink: 0;
+        }
+
+        .ownership-file {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--surface-2);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 10px 16px;
+            font-family: 'DM Mono', monospace;
+            font-size: 13px;
+            color: var(--text);
+        }
+
+        .ownership-file__dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .ownership-file__dot--html { background: #E44D26; }
+        .ownership-file__dot--css  { background: #264DE4; }
+        .ownership-file__dot--js   { background: #F0DB4F; }
+
+        .ownership-file__label {
+            font-size: 10px;
+            color: var(--muted);
+            margin-left: auto;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
         .components-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -555,6 +635,7 @@
             .stat:nth-child(3), .stat:nth-child(4) { border-top: 1px solid var(--border); }
             .compare { grid-template-columns: 1fr; }
             .principles { grid-template-columns: 1fr; }
+            .ownership-callout { grid-template-columns: 1fr; gap: 24px; padding: 28px 24px; }
             .components-grid { grid-template-columns: 1fr 1fr; }
             .section { padding: 60px 20px; }
             .cta { padding: 72px 20px; }
@@ -705,6 +786,37 @@ wp_enqueue_script(<span class="t-str">'bootstrap'</span>);
                 <p>ARIA attributes, keyboard navigation, focus management, and focus return — built in from the start, not bolted on later.</p>
             </div>
 
+        </div>
+    </section>
+
+    <!-- ─── Code Ownership ─── -->
+    <section class="section" style="padding-top: 0;">
+        <div class="ownership-callout">
+            <div class="ownership-callout__left">
+                <p class="ownership-callout__eyebrow">Full code access</p>
+                <h2 class="ownership-callout__title">You own every line.</h2>
+                <p class="ownership-callout__desc">
+                    There's no black box. Every component ships as plain HTML, CSS, and JS — no compiled output, no abstraction layer.
+                    Read it, modify it, strip it down, or build on top of it. It's your code the moment you paste it in.
+                </p>
+            </div>
+            <div class="ownership-callout__files">
+                <div class="ownership-file">
+                    <span class="ownership-file__dot ownership-file__dot--html"></span>
+                    modal.html
+                    <span class="ownership-file__label">markup</span>
+                </div>
+                <div class="ownership-file">
+                    <span class="ownership-file__dot ownership-file__dot--css"></span>
+                    modal.css
+                    <span class="ownership-file__label">styles</span>
+                </div>
+                <div class="ownership-file">
+                    <span class="ownership-file__dot ownership-file__dot--js"></span>
+                    modal.js
+                    <span class="ownership-file__label">behavior</span>
+                </div>
+            </div>
         </div>
     </section>
 
