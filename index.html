@@ -7,10 +7,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WPUI — UI Components for WordPress</title>
     <meta name="description" content="Copy-paste UI components for WordPress themes. No jQuery, no framework, no install. Accessible by default.">
+    <meta name="keywords" content="WordPress UI components, WordPress modal, WordPress accordion, WordPress tabs, WordPress dropdown, vanilla JS WordPress, no jQuery WordPress">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://wpui.dev/">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://wpui.dev/">
+    <meta property="og:title" content="WPUI — UI Components for WordPress">
+    <meta property="og:description" content="Copy-paste UI components for WordPress themes. No jQuery, no framework, no install. Accessible by default.">
+    <meta property="og:site_name" content="WPUI">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="WPUI — UI Components for WordPress">
+    <meta name="twitter:description" content="Copy-paste UI components for WordPress themes. No jQuery, no framework, no install. Accessible by default.">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "WPUI",
+      "description": "Copy-paste UI components for WordPress themes. No jQuery, no framework, no install. Accessible by default.",
+      "url": "https://wpui.dev/",
+      "applicationCategory": "DeveloperApplication",
+      "operatingSystem": "Any",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    }
+    </script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@700;800&family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
 
     <link rel="stylesheet" href="index.css">
 
@@ -20,16 +55,17 @@
 <body>
 
     <!-- ─── Nav ─── -->
-    <nav>
+    <nav aria-label="Main navigation">
         <a href="index.html" class="nav-logo">WPUI</a>
         <div class="nav-links">
             <a href="#components">Components</a>
             <a href="#how-it-works">How it works</a>
-            <a href="#" class="nav-cta">GitHub ↗</a>
+            <a href="#" class="nav-cta" rel="noopener noreferrer">GitHub ↗</a>
         </div>
     </nav>
 
     <!-- ─── Hero ─── -->
+    <main>
     <section class="hero">
         <div class="hero-grid"></div>
         <div class="hero-glow"></div>
@@ -45,7 +81,7 @@
 
         <div class="hero-actions">
             <a href="#components" class="btn-primary">Browse Components →</a>
-            <a href="#" class="btn-ghost">View on GitHub</a>
+            <a href="#" class="btn-ghost" rel="noopener noreferrer">View on GitHub</a>
         </div>
     </section>
 
@@ -285,9 +321,11 @@ wp_enqueue_script(<span class="t-str">'bootstrap'</span>);
         </p>
         <div class="cta-btns">
             <a href="#components" class="btn-primary">Browse Components →</a>
-            <a href="#" class="btn-ghost">View on GitHub</a>
+            <a href="#" class="btn-ghost" rel="noopener noreferrer">View on GitHub</a>
         </div>
     </div>
+
+    </main>
 
     <!-- ─── Footer ─── -->
     <footer>
