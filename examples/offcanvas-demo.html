@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Offcanvas — WPUI Demo</title>
+
+    <link rel="stylesheet" href="demo.css">
+    <link rel="stylesheet" href="../components/offcanvas/offcanvas.css">
+
+</head>
+
+<body>
+
+    <header class="demo-header">
+        <a href="index.html" class="demo-logo">WPUI</a>
+    </header>
+
+    <div class="demo-body">
+
+        <a href="index.html" class="demo-back">← Components</a>
+
+        <h1>Offcanvas</h1>
+        <p style="margin-bottom: 40px;">slide in/out · 4 arah · ESC · backdrop · focus trap · focus return · accessible</p>
+
+        <!-- 01 Right (default) -->
+        <div class="demo-section">
+            <h2>Right</h2>
+            <div class="demo-row">
+
+                <div data-wpui="offcanvas" data-side="right" class="wpui-offcanvas">
+                    <button data-open class="wpui-btn">Open Right</button>
+                    <div class="wpui-offcanvas__backdrop" data-backdrop></div>
+                    <div class="wpui-offcanvas__panel" data-panel
+                        role="dialog" aria-modal="true" aria-hidden="true"
+                        aria-labelledby="oc-right-title">
+                        <div class="wpui-offcanvas__header">
+                            <h2 class="wpui-offcanvas__title" id="oc-right-title">Right Panel</h2>
+                            <button data-close class="wpui-offcanvas__close" aria-label="Close panel">&times;</button>
+                        </div>
+                        <div class="wpui-offcanvas__body">
+                            <p>Panel ini muncul dari sisi kanan. Cocok untuk cart, filter, atau detail konten.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- 02 Left -->
+        <div class="demo-section">
+            <h2>Left</h2>
+            <div class="demo-row">
+
+                <div data-wpui="offcanvas" data-side="left" class="wpui-offcanvas">
+                    <button data-open class="wpui-btn">Open Left</button>
+                    <div class="wpui-offcanvas__backdrop" data-backdrop></div>
+                    <div class="wpui-offcanvas__panel" data-panel
+                        role="dialog" aria-modal="true" aria-hidden="true"
+                        aria-labelledby="oc-left-title">
+                        <div class="wpui-offcanvas__header">
+                            <h2 class="wpui-offcanvas__title" id="oc-left-title">Left Panel</h2>
+                            <button data-close class="wpui-offcanvas__close" aria-label="Close panel">&times;</button>
+                        </div>
+                        <div class="wpui-offcanvas__body">
+                            <p>Panel ini muncul dari sisi kiri. Cocok untuk navigasi sidebar atau menu utama.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- 03 Top -->
+        <div class="demo-section">
+            <h2>Top</h2>
+            <div class="demo-row">
+
+                <div data-wpui="offcanvas" data-side="top" class="wpui-offcanvas">
+                    <button data-open class="wpui-btn">Open Top</button>
+                    <div class="wpui-offcanvas__backdrop" data-backdrop></div>
+                    <div class="wpui-offcanvas__panel" data-panel
+                        role="dialog" aria-modal="true" aria-hidden="true"
+                        aria-labelledby="oc-top-title">
+                        <div class="wpui-offcanvas__header">
+                            <h2 class="wpui-offcanvas__title" id="oc-top-title">Top Panel</h2>
+                            <button data-close class="wpui-offcanvas__close" aria-label="Close panel">&times;</button>
+                        </div>
+                        <div class="wpui-offcanvas__body">
+                            <p>Panel ini muncul dari atas. Cocok untuk search bar atau announcement.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- 04 Bottom -->
+        <div class="demo-section">
+            <h2>Bottom</h2>
+            <div class="demo-row">
+
+                <div data-wpui="offcanvas" data-side="bottom" class="wpui-offcanvas">
+                    <button data-open class="wpui-btn">Open Bottom</button>
+                    <div class="wpui-offcanvas__backdrop" data-backdrop></div>
+                    <div class="wpui-offcanvas__panel" data-panel
+                        role="dialog" aria-modal="true" aria-hidden="true"
+                        aria-labelledby="oc-bottom-title">
+                        <div class="wpui-offcanvas__header">
+                            <h2 class="wpui-offcanvas__title" id="oc-bottom-title">Bottom Panel</h2>
+                            <button data-close class="wpui-offcanvas__close" aria-label="Close panel">&times;</button>
+                        </div>
+                        <div class="wpui-offcanvas__body">
+                            <p>Panel ini muncul dari bawah. Cocok untuk action sheet atau konfirmasi di mobile.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- 05 External trigger -->
+        <div class="demo-section">
+            <h2>External Trigger</h2>
+            <div class="demo-row">
+
+                <button data-offcanvas="nav-panel" class="wpui-btn">Open Nav</button>
+                <button data-offcanvas="nav-panel" class="wpui-btn">Open from here too</button>
+
+            </div>
+        </div>
+
+    </div>
+
+    <!-- External trigger target -->
+    <div id="nav-panel" data-wpui="offcanvas" data-side="left" class="wpui-offcanvas">
+        <div class="wpui-offcanvas__backdrop" data-backdrop></div>
+        <div class="wpui-offcanvas__panel" data-panel
+            role="dialog" aria-modal="true" aria-hidden="true"
+            aria-labelledby="nav-panel-title">
+            <div class="wpui-offcanvas__header">
+                <h2 class="wpui-offcanvas__title" id="nav-panel-title">Navigation</h2>
+                <button data-close class="wpui-offcanvas__close" aria-label="Close panel">&times;</button>
+            </div>
+            <div class="wpui-offcanvas__body">
+                <p>Dibuka dari external trigger menggunakan <code>data-offcanvas="nav-panel"</code>.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer class="demo-footer">
+        <span>WPUI / Offcanvas</span>
+        <span>no framework · no jQuery · no install</span>
+    </footer>
+
+    <script src="../components/offcanvas/offcanvas.js"></script>
+
+</body>
+
+</html>

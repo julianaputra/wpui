@@ -1,0 +1,163 @@
+/* ─── Backdrop ─── */
+
+.wpui-offcanvas__backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, .5);
+    z-index: 300;
+
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .25s ease, visibility .25s ease;
+}
+
+.wpui-offcanvas--open .wpui-offcanvas__backdrop {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* ─── Panel base ─── */
+
+.wpui-offcanvas__panel {
+    position: fixed;
+    z-index: 301;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    transition: transform .3s ease;
+}
+
+/* ─── Side: right (default) ─── */
+
+.wpui-offcanvas__panel {
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 320px;
+    max-width: 90vw;
+    transform: translateX(100%);
+}
+
+.wpui-offcanvas--open .wpui-offcanvas__panel {
+    transform: translateX(0);
+}
+
+/* ─── Side: left ─── */
+
+.wpui-offcanvas[data-side="left"] .wpui-offcanvas__panel {
+    right: auto;
+    left: 0;
+    transform: translateX(-100%);
+}
+
+.wpui-offcanvas[data-side="left"].wpui-offcanvas--open .wpui-offcanvas__panel {
+    transform: translateX(0);
+}
+
+/* ─── Side: top ─── */
+
+.wpui-offcanvas[data-side="top"] .wpui-offcanvas__panel {
+    top: 0;
+    right: auto;
+    left: 0;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    max-height: 80vh;
+    transform: translateY(-100%);
+}
+
+.wpui-offcanvas[data-side="top"].wpui-offcanvas--open .wpui-offcanvas__panel {
+    transform: translateY(0);
+}
+
+/* ─── Side: bottom ─── */
+
+.wpui-offcanvas[data-side="bottom"] .wpui-offcanvas__panel {
+    top: auto;
+    right: auto;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    max-height: 80vh;
+    transform: translateY(100%);
+}
+
+.wpui-offcanvas[data-side="bottom"].wpui-offcanvas--open .wpui-offcanvas__panel {
+    transform: translateY(0);
+}
+
+/* ─── Header ─── */
+
+.wpui-offcanvas__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    border-bottom: 1px solid #D9D6CE;
+    flex-shrink: 0;
+}
+
+.wpui-offcanvas__title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #18181B;
+}
+
+/* ─── Close button ─── */
+
+.wpui-offcanvas__close {
+    width: 32px;
+    height: 32px;
+    border: none;
+    background: none;
+    font-size: 20px;
+    line-height: 1;
+    cursor: pointer;
+    border-radius: 4px;
+    color: #71717A;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: background .1s, color .1s;
+}
+
+.wpui-offcanvas__close:hover {
+    background: #F7F6F2;
+    color: #18181B;
+}
+
+.wpui-offcanvas__close:focus-visible {
+    outline: 2px solid #1A56DB;
+    outline-offset: 2px;
+}
+
+/* ─── Body ─── */
+
+.wpui-offcanvas__body {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px;
+    font-size: 14px;
+    color: #52525B;
+    line-height: 1.7;
+}
+
+/* ─── Trigger button ─── */
+
+.wpui-btn {
+    padding: 9px 16px;
+    border: 1px solid #D9D6CE;
+    border-radius: 6px;
+    background: #fff;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.wpui-btn:focus-visible {
+    outline: 2px solid #1A56DB;
+    outline-offset: 2px;
+}
