@@ -1,0 +1,84 @@
+.wpui-accordion {
+    border: 1px solid #D9D6CE;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* ─── Item ─── */
+
+.wpui-accordion__item {
+    border-bottom: 1px solid #D9D6CE;
+}
+
+.wpui-accordion__item:last-child {
+    border-bottom: none;
+}
+
+/* ─── Trigger ─── */
+
+.wpui-accordion__trigger {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    width: 100%;
+    padding: 16px 20px;
+    border: none;
+    background: #fff;
+    font-size: 15px;
+    font-weight: 500;
+    text-align: left;
+    color: #18181B;
+    cursor: pointer;
+    transition: background .1s;
+}
+
+.wpui-accordion__trigger:hover {
+    background: #F7F6F2;
+}
+
+.wpui-accordion__trigger:focus-visible {
+    outline: 2px solid #1A56DB;
+    outline-offset: -2px;
+}
+
+/* ─── Icon ─── */
+
+.wpui-accordion__icon {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid currentColor;
+    flex-shrink: 0;
+    transition: transform .25s ease;
+}
+
+.wpui-accordion__item--open .wpui-accordion__icon {
+    transform: rotate(180deg);
+}
+
+/* ─── Panel (grid trick untuk smooth height animation) ─── */
+
+.wpui-accordion__panel {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows .25s ease;
+}
+
+.wpui-accordion__item--open .wpui-accordion__panel {
+    grid-template-rows: 1fr;
+}
+
+.wpui-accordion__body {
+    overflow: hidden;
+    padding: 0 20px;
+    font-size: 14px;
+    color: #52525B;
+    line-height: 1.7;
+}
+
+.wpui-accordion__item--open .wpui-accordion__body {
+    padding-bottom: 20px;
+}
